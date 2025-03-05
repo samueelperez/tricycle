@@ -69,11 +69,9 @@ const ProcessSection = () => {
 
   return (
     <SectionContainer>
-      {isMobile ? (
-        <MobileSectionTitle>Proceso de Reciclaje</MobileSectionTitle>
-      ) : (
-        <DesktopSectionTitle>Nuestro Proceso de Reciclaje</DesktopSectionTitle>
-      )}
+      <SectionTitle>
+        {isMobile ? "Proceso de Reciclaje" : "Nuestro Proceso de Reciclaje"}
+      </SectionTitle>
       
       {isMobile ? (
         // Diseño para móvil en grid
@@ -131,56 +129,6 @@ const SectionContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 20px 15px 40px;
     min-height: auto;
-  }
-`;
-
-// Título personalizado para móvil
-const MobileSectionTitle = styled.h2`
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #333;
-  position: relative;
-  padding-bottom: 12px;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(to right, 
-      ${({ theme }) => theme.colors.secondary || '#555'}, 
-      ${({ theme }) => theme.colors.primary}40);
-    border-radius: 3px;
-  }
-`;
-
-// Título para escritorio con estilo similar
-const DesktopSectionTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 40px;
-  color: #333;
-  position: relative;
-  padding-bottom: 15px;
-  
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, 
-      ${({ theme }) => theme.colors.secondary || '#555'}, 
-      ${({ theme }) => theme.colors.primary}40);
-    border-radius: 4px;
   }
 `;
 

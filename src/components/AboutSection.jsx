@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SectionTitle from './SectionTitle';
 
 const AboutSection = () => {
   return (
@@ -32,17 +33,6 @@ const CenteredContainer = styled.div`
 const ContentBox = styled.div`
   max-width: 800px;
   width: 100%;
-`;
-
-const SectionTitle = styled.h2`  
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: ${({ theme }) => theme.colors.primary};
-  text-align: center;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 2rem;
-  }
 `;
 
 const AboutText = styled.p`
