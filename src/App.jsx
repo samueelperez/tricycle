@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { theme } from './styles/theme';
+import MobileStyles from './components/MobileStyles';
 
 // Importamos los componentes de página
 import HomePage from './pages/HomePage';
@@ -22,6 +23,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <GlobalStyles />
+      <MobileStyles />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />

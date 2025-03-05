@@ -65,4 +65,12 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  /* Ocultar puntos de navegación en móvil */
+  @media (max-width: 768px) {
+    #fp-nav,
+    .fp-slidesNav {
+      display: none !important;
+    }
+  }
 `; 

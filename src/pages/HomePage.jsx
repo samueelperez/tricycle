@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import styled from 'styled-components';
 
@@ -17,6 +17,21 @@ import Footer from '../components/Footer';
 const licenseKey = ''; // Modo de desarrollo/evaluación
 
 const HomePage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Detectar si es dispositivo móvil
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Inicializar el estado
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -24,7 +39,7 @@ const HomePage = () => {
         <ReactFullpage
           licenseKey={licenseKey}
           scrollingSpeed={1000}
-          navigation={true}
+          navigation={!isMobile} // Desactivar navegación en móvil
           navigationPosition="right"
           anchors={['inicio', 'sobre-nosotros', 'productos', 'por-que-elegirnos', 'proceso', 'contacto']}
           menu="#menu"
