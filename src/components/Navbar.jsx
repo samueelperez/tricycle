@@ -255,13 +255,15 @@ const NavbarContainer = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
+  padding: 20px 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  background-color: ${({ $isScrolled, theme }) => 
-    $isScrolled ? 'rgba(51, 51, 51, 0.9)' : 'rgba(51, 51, 51, 0.7)'};
-  padding: ${({ $isScrolled }) => $isScrolled ? '10px 0' : '20px 0'};
-  box-shadow: ${({ $isScrolled }) => 
-    $isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
+  background-color: ${({ scrolled, theme }) => 
+    scrolled 
+      ? 'rgba(25, 70, 186, 0.9)' // Azul semitransparente cuando se hace scroll
+      : 'rgba(25, 70, 186, 0.7)'}; // Azul más transparente cuando está en la parte superior
+  box-shadow: ${({ scrolled }) => 
+    scrolled ? '0 5px 15px rgba(0, 0, 0, 0.1)' : 'none'};
 `;
 
 const NavbarContent = styled.div`
@@ -295,56 +297,54 @@ const NavLinks = styled.div`
 `;
 
 const NavLink = styled.a`
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
   text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
   
   &:after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
     width: 0;
     height: 2px;
+    bottom: -5px;
+    left: 0;
     background-color: white;
     transition: width 0.3s ease;
   }
   
-  &:hover {
-    color: white;
-    text-decoration: none;
+  &:hover, &.active {
+    color: #f0f0f0;
+    
+    &:after {
+      width: 100%;
+    }
   }
-  
-  &:hover:after {
-    width: 100%;
-  }
-  
-  &.active {
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
-  }
-  
-  &.active:after {
-    width: 100%; /* Mantener el subrayado para el enlace activo */
-  }
+
+  ${({ mobile }) => mobile && `
+    margin: 15px 0;
+    font-size: 1.2rem;
+  `}
 `;
 
 // Nuevos estilos para el menú móvil
-const MobileMenuButton = styled.div`
+const MobileMenuButton = styled.button`
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  background: transparent;
+  border: none;
+  color: white; // Cambiado a blanco para el icono
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1001;
+  transition: all 0.3s ease;
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    display: flex;
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    display: block;
   }
 `;
 
@@ -409,6 +409,18 @@ const MobileNavLink = styled.a`
   
   &:hover:after {
     width: 100%;
+  }
+`;
+
+const Logo = styled.div`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white; // Aseguramos que el logo sea blanco contra el fondo azul
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.9;
   }
 `;
 
