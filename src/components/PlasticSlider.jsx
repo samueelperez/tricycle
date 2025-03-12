@@ -11,18 +11,18 @@ import tambores from '../assets/images/plastico/tambores.avif';
 const images = [
   {
     src: PET,
-    title: 'PET - Polietileno Tereftalato',
-    description: 'Reciclado de botellas y envases transparentes de alimentos y bebidas.'
+    title: '',
+    description: ''
   },
   {
     src: PEAD,
-    title: 'PEAD - Polietileno de Alta Densidad',
-    description: 'Material reciclado proveniente de envases de detergentes, champús y productos de limpieza.'
+    title: '',
+    description: ''
   },
   {
     src: tambores,
-    title: 'Polipropileno Reciclado',
-    description: 'Obtenido a partir de tapones, envases y componentes industriales.'
+    title: '',
+    description: '.'
   }
 ];
 
