@@ -16,8 +16,8 @@ const images = [
   },
   {
     src: papelDobleCaraOoc,
-    title: 'Papel Craft de Doble Cara',
-    description: 'Versátil papel de doble cara, perfecto para proyectos que requieren resistencia y calidad en ambos lados.'
+    title: 'Residuos de Papel "OCC"',
+    description: ''
   }
 ];
 
