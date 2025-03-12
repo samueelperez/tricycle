@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -8,6 +8,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import PlasticSlider from '../components/PlasticSlider';
 import MetalSlider from '../components/MetalSlider';
 import PaperSlider from '../components/PaperSlider';
+import ContactButton from '../components/ContactButton';
 
 // Usamos la misma imagen para todos los productos
 const productImage = 'https://images.unsplash.com/photo-1558389186-438424b00a32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
@@ -87,6 +88,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Simulamos una carga de datos
@@ -102,6 +104,25 @@ const ProductDetail = () => {
       }
     }, 500);
   }, [id]);
+
+  // Función para manejar el clic en el botón de contacto
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    navigate('/', { replace: true });
+    
+    // Esperar a que la navegación se complete y luego desplazarse a la sección de contacto
+    setTimeout(() => {
+      const contactSection = document.getElementById('contacto');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Usar fullPage API si está disponible
+        if (window.fullpage_api) {
+          window.fullpage_api.moveTo('contacto');
+        }
+      }
+    }, 100);
+  };
 
   if (loading) {
     return <LoadingContainer>Cargando información del producto...</LoadingContainer>;
@@ -182,7 +203,7 @@ const ProductDetail = () => {
         
         <CallToAction>
           <CTAText>¿Interesado en nuestros productos de {product.title.toLowerCase()}?</CTAText>
-          <CTAButton to="/contacto">Contáctanos</CTAButton>
+          <StyledContactButton text={`Consultar sobre ${product.title}`} />
         </CallToAction>
       </PageContainer>
       <Footer />
@@ -380,21 +401,9 @@ const CTAText = styled.p`
   }
 `;
 
-const CTAButton = styled(Link)`
-  display: inline-block;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.darkGreen || '#1e6b47'};
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
+const StyledContactButton = styled(ContactButton)`
+  padding: 14px 30px;
+  font-size: 1.1rem;
 `;
 
 const LoadingContainer = styled.div`
