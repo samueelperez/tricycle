@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // Importamos los componentes de sección
 import Navbar from '../components/Navbar';
@@ -94,6 +95,19 @@ const CenteredSection = styled.div`
   box-sizing: border-box !important;
   overflow: hidden !important;
   position: relative !important;
+`;
+
+const SectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1rem;
 `;
 
 export default HomePage; 

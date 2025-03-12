@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 import ContactForm from './ContactForm';
+import qrCode from '../assets/images/qr.png';
 
 const contactInfo = [
   {
@@ -65,6 +66,17 @@ const ContactSection = () => {
         <ContactFormContainer>
           <ContactForm />
         </ContactFormContainer>
+        <QRCodeContainer
+          as={motion.div}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <QRTitle>Conéctate con nosotros</QRTitle>
+          <QRImage src={qrCode} alt="Código QR de contacto" />
+          <QRText>Escanea para contactarnos directamente</QRText>
+        </QRCodeContainer>
       </ContactContent>
     </SectionContainer>
   );
@@ -81,12 +93,18 @@ const SectionContainer = styled.div`
 
 const ContactContent = styled.div`
   display: flex;
-  max-width: 1100px;
+  max-width: 1300px;
   width: 100%;
-  gap: 40px;
+  gap: 25px;
+  
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
     flex-direction: column;
+    align-items: center;
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -106,7 +124,6 @@ const ContactInfoContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 20px;
   }
-
 `;
 
 const ContactInfoItem = styled(motion.div)`
@@ -167,6 +184,65 @@ const ContactLink = styled.a`
     color: ${({ theme }) => theme.colors.primary};
     text-decoration: underline;
   }
+`;
+
+const QRCodeContainer = styled.div`
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  border-left: 4px solid ${({ theme }) => theme.colors.primary};
+  
+  @media (max-width: 1200px) {
+    flex: 0 0 calc(50% - 15px);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    width: 100%;
+    padding: 25px;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 20px;
+  }
+`;
+
+const QRTitle = styled.h3`
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.primary};
+  text-align: center;
+`;
+
+const QRImage = styled.img`
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 150px;
+    height: 150px;
+  }
+`;
+
+const QRText = styled.p`
+  color: ${({ theme }) => theme.colors.darkGrey};
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.4;
 `;
 
 export default ContactSection; 
