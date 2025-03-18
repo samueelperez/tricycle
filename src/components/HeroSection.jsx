@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 // Usaremos la imagen de los cubos de reciclaje que proporcionaste
 import heroImage from '../assets/images/recycling-bins.jpg'; 
 // Importamos las imágenes para el slider
@@ -16,8 +17,50 @@ const sliderImages = [
   'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
 ];
 
+// Textos predefinidos para cada idioma
+const heroTexts = {
+  es: {
+    title: "Transformamos desechos en recursos sostenibles",
+    subtitle: "Soluciones innovadoras de reciclaje para plásticos, metales y papeles que contribuyen a un futuro más verde",
+    primaryBtn: "Ver Productos",
+    secondaryBtn: "Más Sobre Nosotros"
+  },
+  en: {
+    title: "We transform waste into sustainable resources",
+    subtitle: "Innovative recycling solutions for plastics, metals and paper that contribute to a greener future",
+    primaryBtn: "View Products",
+    secondaryBtn: "More About Us"
+  },
+  fr: {
+    title: "Nous transformons les déchets en ressources durables",
+    subtitle: "Solutions de recyclage innovantes pour les plastiques, métaux et papiers qui contribuent à un avenir plus vert",
+    primaryBtn: "Voir les Produits",
+    secondaryBtn: "En Savoir Plus"
+  },
+  zh: {
+    title: "我们将废物转化为可持续资源",
+    subtitle: "为塑料、金属和纸张提供创新的回收解决方案，为更绿色的未来做出贡献",
+    primaryBtn: "查看产品",
+    secondaryBtn: "了解更多"
+  },
+  tr: {
+    title: "Atıkları sürdürülebilir kaynaklara dönüştürüyoruz",
+    subtitle: "Daha yeşil bir geleceğe katkıda bulunan plastik, metal ve kağıt için yenilikçi geri dönüşüm çözümleri",
+    primaryBtn: "Ürünleri Görüntüle",
+    secondaryBtn: "Hakkımızda Daha Fazla"
+  }
+};
+
 const HeroSection = ({ fullpageApi }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { i18n } = useTranslation();
+  const [texts, setTexts] = useState(heroTexts.es);
+  
+  // Actualizar textos cuando cambie el idioma
+  useEffect(() => {
+    const lang = i18n.language.split('-')[0];
+    setTexts(heroTexts[lang] || heroTexts.es);
+  }, [i18n.language]);
 
   // Efecto para cambiar automáticamente las diapositivas
   useEffect(() => {
@@ -46,17 +89,14 @@ const HeroSection = ({ fullpageApi }) => {
       <HeroOverlay />
       <NavbarSpace />
       <HeroContent>
-        <Title>Transformamos desechos en recursos sostenibles</Title>
-        <Subtitle>
-          Soluciones innovadoras de reciclaje para plásticos, metales y papeles
-          <br />que contribuyen a un futuro más verde
-        </Subtitle>
+        <Title>{texts.title}</Title>
+        <Subtitle dangerouslySetInnerHTML={{ __html: texts.subtitle.replace('\n', '<br />') }} />
         <ButtonGroup>
           <PrimaryButton onClick={() => fullpageApi.moveTo(3)}>
-            Ver Productos
+            {texts.primaryBtn}
           </PrimaryButton>
           <SecondaryButton onClick={() => fullpageApi.moveTo(2)}>
-            Más Sobre Nosotros
+            {texts.secondaryBtn}
           </SecondaryButton>
         </ButtonGroup>
       </HeroContent>

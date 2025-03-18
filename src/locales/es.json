@@ -1,0 +1,91 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "404": "404 - Página no encontrada",
+    "goHome": "Volver al inicio",
+    "search": "Buscar"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "products": "Productos",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "language": "Idioma"
+  },
+  "home": {
+    "hero": {
+      "title": "Reciclaje para un futuro sostenible",
+      "subtitle": "Soluciones innovadoras para la economía circular",
+      "cta": "Conoce más"
+    }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Comprometidos con un futuro sostenible a través del reciclaje de calidad",
+    "description": "En TRICYCLE PRODUCTOS SL nos dedicamos a dar una segunda vida a los desechos, transformándolos en recursos valiosos. Nuestra misión es contribuir a un futuro más sostenible a través del reciclaje efectivo de plásticos, metales y papeles.",
+    "additionalInfo": "Con años de experiencia en el sector, nos hemos convertido en referentes en la transformación y comercialización de materiales reciclables, manteniendo siempre los más altos estándares de calidad y compromiso ambiental.",
+    "vision": "Nuestra Visión",
+    "visionText": "Ser líderes en soluciones de reciclaje innovadoras que transformen la gestión de residuos en oportunidades sostenibles para nuestras comunidades y el planeta.",
+    "mission": "Nuestra Misión", 
+    "missionText": "Transformar residuos en recursos valiosos, promoviendo la economía circular y minimizando el impacto ambiental."
+  },
+  "whyChooseUs": {
+    "title": "¿Por qué elegirnos?",
+    "subtitle": "Innovación, calidad y compromiso en cada proceso",
+    "quality": "Calidad Garantizada",
+    "qualityText": "Nuestros procesos de reciclaje cumplen con los más altos estándares internacionales de calidad y eficiencia.",
+    "innovation": "Innovación Constante",
+    "innovationText": "Desarrollamos e implementamos tecnologías avanzadas para mejorar continuamente nuestros procesos de reciclaje.",
+    "customerService": "Servicio al Cliente",
+    "customerServiceText": "Ofrecemos un servicio personalizado, adaptado a las necesidades específicas de cada cliente.",
+    "sustainability": "Sostenibilidad",
+    "sustainabilityText": "Nuestras soluciones están diseñadas para minimizar el impacto ambiental y promover un futuro más sostenible."
+  },
+  "process": {
+    "title": "Nuestro Proceso",
+    "subtitle": "De residuos a recursos en cuatro pasos simples",
+    "step1": "Recolección",
+    "step1Text": "Recogemos materiales reciclables de empresas, instituciones y puntos de recogida comunitarios.",
+    "step2": "Clasificación",
+    "step2Text": "Separamos los materiales por tipo y calidad para asegurar un reciclaje eficiente.",
+    "step3": "Procesamiento",
+    "step3Text": "Transformamos los materiales en nuevas materias primas utilizando tecnología avanzada.",
+    "step4": "Distribución",
+    "step4Text": "Distribuimos los materiales reciclados a fabricantes y empresas comprometidas con la sostenibilidad.",
+    "step5": "Seguimiento",
+    "step5Text": "Proporcionamos informes detallados sobre el impacto ambiental positivo generado."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para ayudarte. ¡Contáctanos!",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "formSuccess": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.",
+    "formError": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "footer": {
+    "rights": "© 2023 Tricycle Productos SL. Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "followUs": "Síguenos en",
+    "newsletter": "Boletín informativo",
+    "subscribeText": "Suscríbete para recibir noticias y actualizaciones",
+    "subscribe": "Suscribirse",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "message": "Lo sentimos, la página que estás buscando no existe.",
+    "button": "Volver al inicio"
+  }
+} 

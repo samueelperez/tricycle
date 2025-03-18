@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "whyChooseUs": "为什么选择我们",
+    "process": "流程",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "可持续回收解决方案",
+    "subtitle": "将废物转化为宝贵资源",
+    "button": "了解更多"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "TRICYCLE PRODUCTOS SL 是一家专门从事塑料、金属和纸张回收和再利用的公司。我们通过有效的回收解决方案为更可持续的未来做出贡献。",
+    "mission": "我们的使命",
+    "missionText": "将废物转化为宝贵资源，促进循环经济，最大限度地减少环境影响。"
+  },
+  "products": {
+    "title": "我们的产品",
+    "plastic": {
+      "title": "再生塑料",
+      "description": "我们为各种工业应用提供不同类型的高质量再生塑料。"
+    },
+    "metal": {
+      "title": "回收金属",
+      "description": "我们从各种来源回收和处理金属，赋予它们第二次生命。"
+    },
+    "paper": {
+      "title": "纸和纸板",
+      "description": "我们回收纸和纸板以创造新产品，节省树木、水和能源。"
+    },
+    "viewMore": "查看更多详情"
+  },
+  "whyChooseUs": {
+    "title": "为什么选择我们",
+    "quality": {
+      "title": "质量保证",
+      "description": "对我们所有的流程和产品进行严格的质量控制。"
+    },
+    "sustainability": {
+      "title": "可持续承诺",
+      "description": "我们积极为循环经济和环境保护做出贡献。"
+    },
+    "experience": {
+      "title": "经验和知识",
+      "description": "多年的回收行业经验支持我们的工作。"
+    },
+    "customization": {
+      "title": "定制解决方案",
+      "description": "我们根据每个客户的特定需求调整产品。"
+    }
+  },
+  "process": {
+    "title": "我们的流程",
+    "collection": "收集",
+    "sorting": "分类",
+    "processing": "加工",
+    "quality": "质量控制",
+    "distribution": "配送"
+  },
+  "contact": {
+    "title": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "email": "电子邮件",
+    "hours": "营业时间",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "subject": "主题",
+      "message": "信息",
+      "send": "发送信息"
+    },
+    "qrCode": "扫描直接联系我们"
+  },
+  "footer": {
+    "rights": "版权所有",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  }
+} 

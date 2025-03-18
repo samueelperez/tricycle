@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "products": "Productos",
+    "whyChooseUs": "Por Qué Elegirnos",
+    "process": "Proceso",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Soluciones de Reciclaje Sostenibles",
+    "subtitle": "Transformamos residuos en recursos valiosos",
+    "button": "Descubre Cómo"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "description": "TRICYCLE PRODUCTOS SL es una empresa especializada en el reciclaje y recuperación de plásticos, metales y papeles. Contribuimos a un futuro más sostenible a través de soluciones de reciclaje efectivas.",
+    "mission": "Nuestra Misión",
+    "missionText": "Transformar residuos en recursos valiosos, promoviendo la economía circular y minimizando el impacto ambiental."
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "plastic": {
+      "title": "Plástico Reciclado",
+      "description": "Ofrecemos diferentes tipos de plásticos reciclados de alta calidad para diversas aplicaciones industriales."
+    },
+    "metal": {
+      "title": "Metal Recuperado",
+      "description": "Recuperamos y procesamos metales de diversas fuentes para darles una segunda vida."
+    },
+    "paper": {
+      "title": "Papel y Cartón",
+      "description": "Reciclamos papel y cartón para crear nuevos productos, ahorrando árboles, agua y energía."
+    },
+    "viewMore": "Ver más detalles"
+  },
+  "whyChooseUs": {
+    "title": "Por Qué Elegirnos",
+    "quality": {
+      "title": "Calidad Garantizada",
+      "description": "Rigurosos controles de calidad en todos nuestros procesos y productos."
+    },
+    "sustainability": {
+      "title": "Compromiso Sostenible",
+      "description": "Contribuimos activamente a la economía circular y la protección del medio ambiente."
+    },
+    "experience": {
+      "title": "Experiencia y Conocimiento",
+      "description": "Años de experiencia en el sector del reciclaje nos avalan."
+    },
+    "customization": {
+      "title": "Soluciones Personalizadas",
+      "description": "Adaptamos nuestros productos a las necesidades específicas de cada cliente."
+    }
+  },
+  "process": {
+    "title": "Nuestro Proceso",
+    "collection": "Recolección",
+    "sorting": "Clasificación",
+    "processing": "Procesamiento",
+    "quality": "Control de Calidad",
+    "distribution": "Distribución"
+  },
+  "contact": {
+    "title": "Contacto",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "hours": "Horario",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "qrCode": "Escanea para contactarnos directamente"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+} 

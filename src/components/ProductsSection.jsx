@@ -3,9 +3,109 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import SectionTitle from './SectionTitle';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 // Usamos la misma imagen para todos los productos
 const productImage = 'https://images.unsplash.com/photo-1558389186-438424b00a32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+
+// Textos predefinidos para cada idioma
+const productTexts = {
+  es: {
+    title: "Nuestros Productos",
+    subtitle: "Ofrecemos una amplia gama de productos reciclados de alta calidad",
+    viewDetails: "Ver Detalles",
+    products: [
+      {
+        name: "Plástico Reciclado",
+        description: "Plásticos procesados y transformados listos para su reutilización industrial"
+      },
+      {
+        name: "Metal Recuperado",
+        description: "Aluminio, cobre y otros metales reciclados para uso industrial"
+      },
+      {
+        name: "Papel y Cartón",
+        description: "Fibras de celulosa recicladas para la producción de nuevos materiales"
+      }
+    ]
+  },
+  en: {
+    title: "Our Products",
+    subtitle: "We offer a wide range of high-quality recycled products",
+    viewDetails: "View Details",
+    products: [
+      {
+        name: "Recycled Plastic",
+        description: "Processed and transformed plastics ready for industrial reuse"
+      },
+      {
+        name: "Recovered Metal",
+        description: "Aluminum, copper and other recycled metals for industrial use"
+      },
+      {
+        name: "Paper and Cardboard",
+        description: "Recycled cellulose fibers for the production of new materials"
+      }
+    ]
+  },
+  fr: {
+    title: "Nos Produits",
+    subtitle: "Nous proposons une large gamme de produits recyclés de haute qualité",
+    viewDetails: "Voir les Détails",
+    products: [
+      {
+        name: "Plastique Recyclé",
+        description: "Plastiques transformés et traités prêts pour la réutilisation industrielle"
+      },
+      {
+        name: "Métal Récupéré",
+        description: "Aluminium, cuivre et autres métaux recyclés pour usage industriel"
+      },
+      {
+        name: "Papier et Carton",
+        description: "Fibres de cellulose recyclées pour la production de nouveaux matériaux"
+      }
+    ]
+  },
+  zh: {
+    title: "我们的产品",
+    subtitle: "我们提供各种高质量的再生产品",
+    viewDetails: "查看详情",
+    products: [
+      {
+        name: "回收塑料",
+        description: "经过加工和转化的塑料，可供工业再利用"
+      },
+      {
+        name: "回收金属",
+        description: "铝、铜和其他回收金属用于工业用途"
+      },
+      {
+        name: "纸和纸板",
+        description: "用于生产新材料的再生纤维素纤维"
+      }
+    ]
+  },
+  tr: {
+    title: "Ürünlerimiz",
+    subtitle: "Yüksek kaliteli geri dönüştürülmüş ürünlerin geniş bir yelpazesini sunuyoruz",
+    viewDetails: "Detayları Görüntüle",
+    products: [
+      {
+        name: "Geri Dönüştürülmüş Plastik",
+        description: "Endüstriyel yeniden kullanım için hazır işlenmiş ve dönüştürülmüş plastikler"
+      },
+      {
+        name: "Geri Kazanılmış Metal",
+        description: "Endüstriyel kullanım için alüminyum, bakır ve diğer geri dönüştürülmüş metaller"
+      },
+      {
+        name: "Kağıt ve Karton",
+        description: "Yeni malzemelerin üretimi için geri dönüştürülmüş selüloz lifleri"
+      }
+    ]
+  }
+};
 
 const products = [
   {
@@ -28,10 +128,12 @@ const products = [
     description: 'Reciclamos papel y cartón para crear nuevos productos, ahorrando árboles, agua y energía en el proceso de fabricación.',
     image: productImage,
     icon: '📄'
-  },
+  }
 ];
 
 const ProductsSection = () => {
+  const { i18n } = useTranslation();
+  const [texts, setTexts] = useState(productTexts.es);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [direction, setDirection] = useState(0); // -1 para izquierda, 1 para derecha
@@ -60,6 +162,12 @@ const ProductsSection = () => {
       return () => clearInterval(interval);
     }
   }, [isMobile]);
+
+  // Actualizar textos cuando cambie el idioma
+  useEffect(() => {
+    const lang = i18n.language.split('-')[0];
+    setTexts(productTexts[lang] || productTexts.es);
+  }, [i18n.language]);
 
   const nextSlide = () => {
     setDirection(1);
@@ -94,7 +202,7 @@ const ProductsSection = () => {
 
   return (
     <ProductsContainer>
-      <SectionTitle>Nuestros Productos</SectionTitle>
+      <SectionTitle>{texts.title}</SectionTitle>
       
       {isMobile ? (
         <MobileView>
@@ -113,11 +221,11 @@ const ProductsSection = () => {
                 }}
               >
                 <ProductIcon>{products[currentSlide].icon}</ProductIcon>
-                <ProductTitle>{products[currentSlide].title}</ProductTitle>
-                <ProductDescription>{products[currentSlide].description}</ProductDescription>
+                <ProductTitle>{texts.products[currentSlide].name}</ProductTitle>
+                <ProductDescription>{texts.products[currentSlide].description}</ProductDescription>
                 <ButtonContainer>
                   <ProductButton to={`/productos/${products[currentSlide].id}`}>
-                    Ver más detalles
+                    {texts.viewDetails}
                   </ProductButton>
                 </ButtonContainer>
               </MobileProductCard>
@@ -145,18 +253,18 @@ const ProductsSection = () => {
         <ProductsGrid>
           {products.map((product, index) => (
             <ProductCard
-              key={product.id}
+              key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
               <ProductIcon>{product.icon}</ProductIcon>
-              <ProductTitle>{product.title}</ProductTitle>
-              <ProductDescription>{product.description}</ProductDescription>
+              <ProductTitle>{texts.products[index].name}</ProductTitle>
+              <ProductDescription>{texts.products[index].description}</ProductDescription>
               <ButtonContainer>
                 <ProductButton to={`/productos/${product.id}`}>
-                  Ver más detalles
+                  {texts.viewDetails}
                 </ProductButton>
               </ButtonContainer>
             </ProductCard>

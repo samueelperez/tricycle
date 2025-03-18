@@ -3,21 +3,21 @@ import styled from 'styled-components';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "+34642609394"; // Número de WhatsApp actualizado
-  const message = "Hola, estoy interesado en sus servicios de reciclaje.";
+  // Nuevo número de WhatsApp
+  const phoneNumber = '+34653212870';
   
-  const handleClick = () => {
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  const handleWhatsAppClick = () => {
+    window.open(`https://wa.me/${phoneNumber}?text=Hola, estoy interesado en sus servicios de reciclaje.`, '_blank');
   };
-  
+
   return (
-    <FloatingButton onClick={handleClick}>
-      <FaWhatsapp size={24} />
-    </FloatingButton>
+    <WhatsAppButtonContainer onClick={handleWhatsAppClick}>
+      <WhatsAppIcon />
+    </WhatsAppButtonContainer>
   );
 };
 
-const FloatingButton = styled.button`
+const WhatsAppButtonContainer = styled.button`
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -25,18 +25,28 @@ const FloatingButton = styled.button`
   height: 60px;
   border-radius: 50%;
   background-color: #25D366;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
   transition: all 0.3s ease;
   
   &:hover {
     transform: scale(1.1);
-    background-color: #20BA5C;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   }
+  
+  &:focus {
+    outline: none;
+  }
+`;
+
+const WhatsAppIcon = styled(FaWhatsapp)`
+  color: white;
+  font-size: 2rem;
 `;
 
 export default WhatsAppButton; 

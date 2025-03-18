@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "whyChooseUs": "Neden Bizi Seçmelisiniz",
+    "process": "Süreç",
+    "contact": "İletişim"
+  },
+  "home": {
+    "title": "Tricycle'a Hoş Geldiniz",
+    "subtitle": "İşletmeniz için yenilikçi çözümler",
+    "exploreButton": "Ürünleri Keşfedin",
+    "contactButton": "Bize Ulaşın"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Tarihimiz ve misyonumuz",
+    "description": "Yenilikçi ve sürdürülebilir çözümler sunmaya adanmış bir şirketiz. Başlangıcımızdan beri, müşterilerimizin ihtiyaçlarını karşılayan yüksek kaliteli ürünler geliştirmeye odaklandık.",
+    "vision": "Vizyonumuz",
+    "visionText": "Mükemmelliğimiz, yenilikçiliğimiz ve sürdürülebilirliğe olan bağlılığımızla tanınan sektör lideri olmak.",
+    "mission": "Misyonumuz",
+    "missionText": "Topluma ve çevreye olumlu katkıda bulunurken, müşterilerimizin yaşamlarını iyileştiren yüksek kaliteli çözümler sunmak."
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "subtitle": "Çözüm yelpazemizi keşfedin",
+    "allCategories": "Tüm Kategoriler",
+    "viewDetails": "Detayları Görüntüle",
+    "inquire": "Bilgi İsteyin"
+  },
+  "whyChooseUs": {
+    "title": "Neden Bizi Seçmelisiniz",
+    "subtitle": "Bize güvenmeniz için nedenler",
+    "quality": "Yüksek Kalite",
+    "qualityText": "Ürünlerimiz en iyi malzemelerle üretilir ve en yüksek kalite standartlarını karşılar.",
+    "innovation": "Sürekli Yenilik",
+    "innovationText": "En gelişmiş çözümleri sunmak için araştırma ve geliştirmeye sürekli yatırım yapıyoruz.",
+    "customerService": "Müşteri Hizmetleri",
+    "customerServiceText": "Müşteri hizmetleri ekibimiz, ihtiyacınız olan her konuda yardımcı olmak için hazırdır.",
+    "sustainability": "Sürdürülebilirlik Taahhüdü",
+    "sustainabilityText": "Çevresel etkimizi en aza indirmek ve daha sürdürülebilir bir geleceğe katkıda bulunmak için çalışıyoruz."
+  },
+  "process": {
+    "title": "Sürecimiz",
+    "subtitle": "Nasıl çalışıyoruz",
+    "step1": "İlk Danışma",
+    "step1Text": "Projenizi tam olarak anlamak için ihtiyaçlarınızı ve gereksinimlerinizi analiz ediyoruz.",
+    "step2": "Planlama ve Tasarım",
+    "step2Text": "Detaylı bir plan geliştiriyor ve onayınız için ön tasarımlar oluşturuyoruz.",
+    "step3": "Üretim",
+    "step3Text": "Ürünleri sıkı kalite kontrolleri takip ederek üretiyoruz.",
+    "step4": "Teslimat ve Kurulum",
+    "step4Text": "Ürünleri konumunuza profesyonellikle teslim edip kuruyoruz.",
+    "step5": "Satış Sonrası Destek",
+    "step5Text": "Uzun vadeli memnuniyetinizi sağlamak için sürekli destek sunuyoruz."
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Yardım etmek için buradayız",
+    "name": "İsim",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "subject": "Konu",
+    "message": "Mesaj",
+    "send": "Mesaj Gönder",
+    "address": "Adres",
+    "emailUs": "Bize E-posta Gönderin",
+    "callUs": "Bizi Arayın",
+    "followUs": "Bizi Takip Edin",
+    "formSuccess": "Mesaj başarıyla gönderildi! Yakında sizinle iletişime geçeceğiz.",
+    "formError": "Mesajınızı gönderirken bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "footer": {
+    "rightsReserved": "Tüm hakları saklıdır",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Kullanım Şartları",
+    "madeWith": "İle yapılmıştır"
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Üzgünüz, aradığınız sayfa mevcut değil veya taşınmış.",
+    "backButton": "Ana Sayfaya Dön"
+  },
+  "common": {
+    "readMore": "Daha Fazla Oku",
+    "viewAll": "Tümünü Görüntüle",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar Dene",
+    "soon": "Çok Yakında"
+  }
+} 

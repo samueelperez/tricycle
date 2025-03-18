@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "whyChooseUs": "Why Choose Us",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to Tricycle",
+    "subtitle": "Innovative solutions for your business",
+    "exploreButton": "Explore Products",
+    "contactButton": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Our history and mission",
+    "description": "We are a company committed to providing innovative and sustainable solutions. Since our beginnings, we have focused on developing high-quality products that meet the needs of our customers.",
+    "vision": "Our Vision",
+    "visionText": "To be leaders in the industry, recognized for our excellence, innovation, and commitment to sustainability.",
+    "mission": "Our Mission",
+    "missionText": "To provide high-quality solutions that improve the lives of our customers, while positively contributing to society and the environment."
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Discover our range of solutions",
+    "allCategories": "All Categories",
+    "viewDetails": "View Details",
+    "inquire": "Request Information"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "subtitle": "Reasons to trust us",
+    "quality": "High Quality",
+    "qualityText": "Our products are manufactured with the best materials and meet the highest quality standards.",
+    "innovation": "Continuous Innovation",
+    "innovationText": "We constantly invest in research and development to offer the most advanced solutions.",
+    "customerService": "Customer Service",
+    "customerServiceText": "Our customer service team is available to help you with everything you need.",
+    "sustainability": "Commitment to Sustainability",
+    "sustainabilityText": "We work to minimize our environmental impact and contribute to a more sustainable future."
+  },
+  "process": {
+    "title": "Our Process",
+    "subtitle": "How we work",
+    "step1": "Initial Consultation",
+    "step1Text": "We analyze your needs and requirements to fully understand your project.",
+    "step2": "Planning and Design",
+    "step2Text": "We develop a detailed plan and create preliminary designs for your approval.",
+    "step3": "Production",
+    "step3Text": "We manufacture the products following strict quality controls.",
+    "step4": "Delivery and Installation",
+    "step4Text": "We deliver and install the products at your location with professionalism.",
+    "step5": "After-sales Support",
+    "step5Text": "We offer continuous support to ensure your long-term satisfaction."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "address": "Address",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "followUs": "Follow Us",
+    "formSuccess": "Message sent successfully! We will contact you soon.",
+    "formError": "There was an error sending your message. Please try again."
+  },
+  "footer": {
+    "rightsReserved": "All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "madeWith": "Made with"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backButton": "Back to Home"
+  },
+  "common": {
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "loading": "Loading...",
+    "error": "An error has occurred",
+    "retry": "Retry",
+    "soon": "Coming Soon"
+  }
+} 

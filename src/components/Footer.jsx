@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <FooterContainer>
       <FooterContent>
-        <Copyright>© {new Date().getFullYear()} TRICYCLE PRODUCTOS SL. Todos los derechos reservados.</Copyright>
+        <Copyright>© {new Date().getFullYear()} TRICYCLE PRODUCTOS SL. {t('footer.rightsReserved')}</Copyright>
       </FooterContent>
     </FooterContainer>
   );

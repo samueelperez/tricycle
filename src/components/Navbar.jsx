@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import logoImage from '../assets/images/logo.png'; // Importamos la imagen del logo
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   // Mapeo de índices a IDs de sección
   const indexToSection = {
@@ -121,7 +124,7 @@ const Navbar = () => {
               handleNavClick('inicio');
             }}
           >
-            Inicio
+            {t('navbar.home')}
           </NavLink>
           <NavLink 
             href="#2" 
@@ -131,7 +134,7 @@ const Navbar = () => {
               handleNavClick('sobre-nosotros');
             }}
           >
-            Sobre Nosotros
+            {t('navbar.about')}
           </NavLink>
           <NavLink 
             href="#3" 
@@ -141,7 +144,7 @@ const Navbar = () => {
               handleNavClick('productos');
             }}
           >
-            Productos
+            {t('navbar.products')}
           </NavLink>
           <NavLink 
             href="#4" 
@@ -151,7 +154,7 @@ const Navbar = () => {
               handleNavClick('por-que-elegirnos');
             }}
           >
-            Por Qué Elegirnos
+            {t('navbar.whyChooseUs')}
           </NavLink>
           <NavLink 
             href="#5" 
@@ -161,7 +164,7 @@ const Navbar = () => {
               handleNavClick('proceso');
             }}
           >
-            Proceso
+            {t('navbar.process')}
           </NavLink>
           <NavLink 
             href="#6" 
@@ -171,16 +174,21 @@ const Navbar = () => {
               handleNavClick('contacto');
             }}
           >
-            Contacto
+            {t('navbar.contact')}
           </NavLink>
         </NavLinks>
         
-        {/* Botón de menú hamburguesa para móvil */}
-        <MobileMenuButton onClick={toggleMobileMenu}>
-          <MenuBar $open={mobileMenuOpen} />
-          <MenuBar $open={mobileMenuOpen} />
-          <MenuBar $open={mobileMenuOpen} />
-        </MobileMenuButton>
+        {/* Añadimos el selector de idioma */}
+        <RightSideContainer>
+          <LanguageSelector />
+          
+          {/* Botón de menú hamburguesa para móvil */}
+          <MobileMenuButton onClick={toggleMobileMenu}>
+            <MenuBar $open={mobileMenuOpen} />
+            <MenuBar $open={mobileMenuOpen} />
+            <MenuBar $open={mobileMenuOpen} />
+          </MobileMenuButton>
+        </RightSideContainer>
         
         {/* Menú móvil */}
         <MobileMenu $open={mobileMenuOpen}>
@@ -192,7 +200,7 @@ const Navbar = () => {
             }}
             $active={activeSection === 'inicio'}
           >
-            Inicio
+            {t('navbar.home')}
           </MobileNavLink>
           <MobileNavLink 
             href="#2"
@@ -202,7 +210,7 @@ const Navbar = () => {
             }}
             $active={activeSection === 'sobre-nosotros'}
           >
-            Sobre Nosotros
+            {t('navbar.about')}
           </MobileNavLink>
           <MobileNavLink 
             href="#3"
@@ -212,7 +220,7 @@ const Navbar = () => {
             }}
             $active={activeSection === 'productos'}
           >
-            Productos
+            {t('navbar.products')}
           </MobileNavLink>
           <MobileNavLink 
             href="#4"
@@ -222,7 +230,7 @@ const Navbar = () => {
             }}
             $active={activeSection === 'por-que-elegirnos'}
           >
-            Por Qué Elegirnos
+            {t('navbar.whyChooseUs')}
           </MobileNavLink>
           <MobileNavLink 
             href="#5"
@@ -232,7 +240,7 @@ const Navbar = () => {
             }}
             $active={activeSection === 'proceso'}
           >
-            Proceso
+            {t('navbar.process')}
           </MobileNavLink>
           <MobileNavLink 
             href="#6"
@@ -242,8 +250,13 @@ const Navbar = () => {
             }}
             $active={activeSection === 'contacto'}
           >
-            Contacto
+            {t('navbar.contact')}
           </MobileNavLink>
+          
+          {/* Añadir el selector de idioma también en el menú móvil */}
+          <MobileLanguageContainer>
+            <LanguageSelector />
+          </MobileLanguageContainer>
         </MobileMenu>
       </NavbarContent>
     </NavbarContainer>
@@ -422,6 +435,17 @@ const Logo = styled.div`
   &:hover {
     opacity: 0.9;
   }
+`;
+
+// Nuevos estilos para el contenedor del lado derecho
+const RightSideContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+// Contenedor para el selector de idioma en móvil
+const MobileLanguageContainer = styled.div`
+  margin-top: 30px;
 `;
 
 export default Navbar; 

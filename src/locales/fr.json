@@ -1,0 +1,92 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "404": "404 - Page non trouvée",
+    "goHome": "Retour à l'accueil",
+    "search": "Rechercher"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "products": "Produits",
+    "contact": "Contact",
+    "blog": "Blog",
+    "login": "Connexion",
+    "signup": "S'inscrire",
+    "language": "Langue"
+  },
+  "home": {
+    "hero": {
+      "title": "Recyclage pour un avenir durable",
+      "subtitle": "Solutions innovantes pour l'économie circulaire",
+      "cta": "En savoir plus"
+    }
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "subtitle": "Engagés pour un avenir durable grâce au recyclage de qualité",
+    "description": "TRICYCLE PRODUCTOS SL est une entreprise spécialisée dans le recyclage et la récupération des plastiques, métaux et papiers. Nous contribuons à un avenir plus durable grâce à des solutions de recyclage efficaces.",
+    "additionalInfo": "Avec des années d'expérience dans le secteur, nous sommes devenus une référence dans la transformation et la commercialisation de matériaux recyclables, en maintenant toujours les normes les plus élevées de qualité et d'engagement environnemental.",
+    "vision": "Notre Vision",
+    "visionText": "Être leaders dans les solutions de recyclage innovantes qui transforment la gestion des déchets en opportunités durables pour nos communautés et la planète.",
+    "mission": "Notre Mission",
+    "missionText": "Transformer les déchets en ressources précieuses, en promouvant l'économie circulaire et en minimisant l'impact environnemental."
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi Nous Choisir",
+    "subtitle": "Innovation, qualité et engagement dans chaque processus",
+    "quality": "Qualité Garantie",
+    "qualityText": "Nos processus de recyclage répondent aux normes internationales les plus élevées de qualité et d'efficacité.",
+    "innovation": "Innovation Constante",
+    "innovationText": "Nous développons et mettons en œuvre des technologies avancées pour améliorer continuellement nos processus de recyclage.",
+    "customerService": "Service Client",
+    "customerServiceText": "Nous offrons un service personnalisé, adapté aux besoins spécifiques de chaque client.",
+    "sustainability": "Durabilité",
+    "sustainabilityText": "Nos solutions sont conçues pour minimiser l'impact environnemental et promouvoir un avenir plus durable."
+  },
+  "process": {
+    "title": "Notre Processus",
+    "subtitle": "Des déchets aux ressources en quatre étapes simples",
+    "step1": "Collecte",
+    "step1Text": "Nous collectons des matériaux recyclables auprès d'entreprises, d'institutions et de points de collecte communautaires.",
+    "step2": "Classification",
+    "step2Text": "Nous séparons les matériaux par type et qualité pour assurer un recyclage efficace.",
+    "step3": "Traitement",
+    "step3Text": "Nous transformons les matériaux en nouvelles matières premières à l'aide de technologies avancées.",
+    "step4": "Distribution",
+    "step4Text": "Nous distribuons les matériaux recyclés aux fabricants et aux entreprises engagées dans le développement durable.",
+    "step5": "Suivi",
+    "step5Text": "Nous fournissons des rapports détaillés sur l'impact environnemental positif généré."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Nous sommes là pour vous aider. Contactez-nous!",
+    "name": "Nom",
+    "email": "Email",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer",
+    "formSuccess": "Message envoyé avec succès! Nous vous répondrons bientôt.",
+    "formError": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
+  },
+  "footer": {
+    "rights": "© 2023 Tricycle Productos SL. Tous droits réservés.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "followUs": "Suivez-nous sur",
+    "newsletter": "Newsletter",
+    "subscribeText": "Abonnez-vous pour recevoir des nouvelles et des mises à jour",
+    "subscribe": "S'abonner",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email"
+  },
+  "notFound": {
+    "title": "Page Non Trouvée",
+    "message": "Désolé, la page que vous recherchez n'existe pas.",
+    "button": "Retour à l'accueil"
+  },
+  "language": "fr"
+}

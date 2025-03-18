@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "whyChooseUs": "Neden Bizi Seçmelisiniz",
+    "process": "Süreç",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Sürdürülebilir Geri Dönüşüm Çözümleri",
+    "subtitle": "Atıkları değerli kaynaklara dönüştürüyoruz",
+    "button": "Nasıl Keşfedin"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "TRICYCLE PRODUCTOS SL, plastik, metal ve kağıt geri dönüşümü ve geri kazanımı konusunda uzmanlaşmış bir şirkettir. Etkili geri dönüşüm çözümleriyle daha sürdürülebilir bir geleceğe katkıda bulunuyoruz.",
+    "mission": "Misyonumuz",
+    "missionText": "Atıkları değerli kaynaklara dönüştürmek, döngüsel ekonomiyi teşvik etmek ve çevresel etkiyi en aza indirmek."
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "plastic": {
+      "title": "Geri Dönüştürülmüş Plastik",
+      "description": "Çeşitli endüstriyel uygulamalar için farklı türlerde yüksek kaliteli geri dönüştürülmüş plastikler sunuyoruz."
+    },
+    "metal": {
+      "title": "Geri Kazanılmış Metal",
+      "description": "Çeşitli kaynaklardan metalleri geri kazanıyor ve işleyerek onlara ikinci bir hayat veriyoruz."
+    },
+    "paper": {
+      "title": "Kağıt ve Karton",
+      "description": "Ağaçları, suyu ve enerjiyi koruyarak yeni ürünler oluşturmak için kağıt ve kartonu geri dönüştürüyoruz."
+    },
+    "viewMore": "Daha fazla detay gör"
+  },
+  "whyChooseUs": {
+    "title": "Neden Bizi Seçmelisiniz",
+    "quality": {
+      "title": "Garantili Kalite",
+      "description": "Tüm süreçlerimizde ve ürünlerimizde titiz kalite kontrolleri."
+    },
+    "sustainability": {
+      "title": "Sürdürülebilir Taahhüt",
+      "description": "Döngüsel ekonomiye ve çevre korumasına aktif olarak katkıda bulunuyoruz."
+    },
+    "experience": {
+      "title": "Deneyim ve Bilgi",
+      "description": "Geri dönüşüm sektöründeki yıllarca süren deneyimimiz bizi destekliyor."
+    },
+    "customization": {
+      "title": "Özelleştirilmiş Çözümler",
+      "description": "Ürünlerimizi her müşterinin özel ihtiyaçlarına göre uyarlıyoruz."
+    }
+  },
+  "process": {
+    "title": "Sürecimiz",
+    "collection": "Toplama",
+    "sorting": "Ayırma",
+    "processing": "İşleme",
+    "quality": "Kalite Kontrol",
+    "distribution": "Dağıtım"
+  },
+  "contact": {
+    "title": "İletişim",
+    "address": "Adres",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "hours": "Çalışma Saatleri",
+    "form": {
+      "name": "İsim",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "send": "Mesaj Gönder"
+    },
+    "qrCode": "Doğrudan iletişim için tarayın"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  }
+} 

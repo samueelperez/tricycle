@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "products": "Produits",
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "process": "Processus",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Solutions de Recyclage Durables",
+    "subtitle": "Transformer les déchets en ressources précieuses",
+    "button": "Découvrir Comment"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "description": "TRICYCLE PRODUCTOS SL est une entreprise spécialisée dans le recyclage et la récupération des plastiques, métaux et papiers. Nous contribuons à un avenir plus durable grâce à des solutions de recyclage efficaces.",
+    "mission": "Notre Mission",
+    "missionText": "Transformer les déchets en ressources précieuses, promouvoir l'économie circulaire et minimiser l'impact environnemental."
+  },
+  "products": {
+    "title": "Nos Produits",
+    "plastic": {
+      "title": "Plastique Recyclé",
+      "description": "Nous proposons différents types de plastiques recyclés de haute qualité pour diverses applications industrielles."
+    },
+    "metal": {
+      "title": "Métal Récupéré",
+      "description": "Nous récupérons et traitons les métaux de diverses sources pour leur donner une seconde vie."
+    },
+    "paper": {
+      "title": "Papier et Carton",
+      "description": "Nous recyclons le papier et le carton pour créer de nouveaux produits, économisant ainsi des arbres, de l'eau et de l'énergie."
+    },
+    "viewMore": "Voir plus de détails"
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi Nous Choisir",
+    "quality": {
+      "title": "Qualité Garantie",
+      "description": "Contrôles de qualité rigoureux dans tous nos processus et produits."
+    },
+    "sustainability": {
+      "title": "Engagement Durable",
+      "description": "Nous contribuons activement à l'économie circulaire et à la protection de l'environnement."
+    },
+    "experience": {
+      "title": "Expérience et Connaissance",
+      "description": "Des années d'expérience dans le secteur du recyclage nous soutiennent."
+    },
+    "customization": {
+      "title": "Solutions Personnalisées",
+      "description": "Nous adaptons nos produits aux besoins spécifiques de chaque client."
+    }
+  },
+  "process": {
+    "title": "Notre Processus",
+    "collection": "Collecte",
+    "sorting": "Tri",
+    "processing": "Traitement",
+    "quality": "Contrôle Qualité",
+    "distribution": "Distribution"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le Message"
+    },
+    "qrCode": "Scannez pour nous contacter directement"
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  }
+} 

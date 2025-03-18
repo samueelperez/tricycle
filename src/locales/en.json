@@ -1,0 +1,91 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "404": "404 - Page not found",
+    "goHome": "Go home",
+    "search": "Search"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "products": "Products",
+    "contact": "Contact",
+    "blog": "Blog",
+    "login": "Login",
+    "signup": "Sign Up",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Recycling for a sustainable future",
+      "subtitle": "Innovative solutions for the circular economy",
+      "cta": "Learn more"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Committed to a sustainable future through quality recycling",
+    "description": "At TRICYCLE PRODUCTOS SL, we are dedicated to giving waste a second life, transforming it into valuable resources. Our mission is to contribute to a more sustainable future through effective recycling of plastics, metals, and papers.",
+    "additionalInfo": "With years of experience in the sector, we have become leaders in the transformation and commercialization of recyclable materials, always maintaining the highest standards of quality and environmental commitment.",
+    "vision": "Our Vision",
+    "visionText": "To be leaders in innovative recycling solutions that transform waste management into sustainable opportunities for our communities and the planet.",
+    "mission": "Our Mission",
+    "missionText": "To transform waste into valuable resources, promoting the circular economy and minimizing environmental impact."
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "subtitle": "Innovation, quality, and commitment in every process",
+    "quality": "Guaranteed Quality",
+    "qualityText": "Our recycling processes meet the highest international standards of quality and efficiency.",
+    "innovation": "Constant Innovation",
+    "innovationText": "We develop and implement advanced technologies to continuously improve our recycling processes.",
+    "customerService": "Customer Service",
+    "customerServiceText": "We offer personalized service, tailored to the specific needs of each client.",
+    "sustainability": "Sustainability",
+    "sustainabilityText": "Our solutions are designed to minimize environmental impact and promote a more sustainable future."
+  },
+  "process": {
+    "title": "Our Process",
+    "subtitle": "From waste to resources in four simple steps",
+    "step1": "Collection",
+    "step1Text": "We collect recyclable materials from companies, institutions, and community collection points.",
+    "step2": "Classification",
+    "step2Text": "We separate materials by type and quality to ensure efficient recycling.",
+    "step3": "Processing",
+    "step3Text": "We transform materials into new raw materials using advanced technology.",
+    "step4": "Distribution",
+    "step4Text": "We distribute recycled materials to manufacturers and companies committed to sustainability.",
+    "step5": "Monitoring",
+    "step5Text": "We provide detailed reports on the positive environmental impact generated."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We're here to help. Get in touch!",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "formSuccess": "Message sent successfully! We'll get back to you soon.",
+    "formError": "There was an error sending your message. Please try again."
+  },
+  "footer": {
+    "rights": "© 2023 Tricycle Productos SL. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "followUs": "Follow us on",
+    "newsletter": "Newsletter",
+    "subscribeText": "Subscribe to receive news and updates",
+    "subscribe": "Subscribe",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist.",
+    "button": "Back to home"
+  }
+} 

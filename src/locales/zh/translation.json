@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "whyChooseUs": "为什么选择我们",
+    "process": "流程",
+    "contact": "联系我们"
+  },
+  "home": {
+    "title": "欢迎来到Tricycle",
+    "subtitle": "为您的企业提供创新解决方案",
+    "exploreButton": "探索产品",
+    "contactButton": "联系我们"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "我们的历史和使命",
+    "description": "我们是一家致力于提供创新和可持续解决方案的公司。自成立以来，我们一直专注于开发能满足客户需求的高质量产品。",
+    "vision": "我们的愿景",
+    "visionText": "成为行业领导者，因我们的卓越、创新和对可持续发展的承诺而受到认可。",
+    "mission": "我们的使命",
+    "missionText": "提供能改善客户生活的高质量解决方案，同时为社会和环境做出积极贡献。"
+  },
+  "products": {
+    "title": "我们的产品",
+    "subtitle": "探索我们的解决方案系列",
+    "allCategories": "所有类别",
+    "viewDetails": "查看详情",
+    "inquire": "请求信息"
+  },
+  "whyChooseUs": {
+    "title": "为什么选择我们",
+    "subtitle": "信任我们的理由",
+    "quality": "高质量",
+    "qualityText": "我们的产品采用最好的材料制造，符合最高的质量标准。",
+    "innovation": "持续创新",
+    "innovationText": "我们不断投资研发，提供最先进的解决方案。",
+    "customerService": "客户服务",
+    "customerServiceText": "我们的客户服务团队随时准备帮助您满足所有需求。",
+    "sustainability": "对可持续发展的承诺",
+    "sustainabilityText": "我们努力减少环境影响，为更可持续的未来做出贡献。"
+  },
+  "process": {
+    "title": "我们的流程",
+    "subtitle": "我们如何工作",
+    "step1": "初步咨询",
+    "step1Text": "我们分析您的需求和要求，以充分了解您的项目。",
+    "step2": "规划和设计",
+    "step2Text": "我们制定详细计划并创建初步设计供您批准。",
+    "step3": "生产",
+    "step3Text": "我们按照严格的质量控制标准制造产品。",
+    "step4": "交付和安装",
+    "step4Text": "我们以专业的态度在您的地点交付和安装产品。",
+    "step5": "售后支持",
+    "step5Text": "我们提供持续支持，确保您长期满意。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们随时为您提供帮助",
+    "name": "姓名",
+    "email": "电子邮件",
+    "phone": "电话",
+    "subject": "主题",
+    "message": "信息",
+    "send": "发送信息",
+    "address": "地址",
+    "emailUs": "给我们发邮件",
+    "callUs": "给我们打电话",
+    "followUs": "关注我们",
+    "formSuccess": "信息发送成功！我们将很快与您联系。",
+    "formError": "发送信息时出错。请重试。"
+  },
+  "footer": {
+    "rightsReserved": "版权所有",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "madeWith": "制作于"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "抱歉，您正在查找的页面不存在或已被移动。",
+    "backButton": "返回首页"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "viewAll": "查看全部",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "retry": "重试",
+    "soon": "即将推出"
+  }
+} 

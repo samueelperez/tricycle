@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SectionTitle from './SectionTitle';
+import { useTranslation } from 'react-i18next';
+
+// Textos predefinidos para cada idioma como fallback
+const additionalTexts = {
+  es: "Con años de experiencia en el sector, nos hemos convertido en referentes en la transformación y comercialización de materiales reciclables, manteniendo siempre los más altos estándares de calidad y compromiso ambiental.",
+  en: "With years of experience in the sector, we have become leaders in the transformation and commercialization of recyclable materials, always maintaining the highest standards of quality and environmental commitment.",
+  fr: "Avec des années d'expérience dans le secteur, nous sommes devenus une référence dans la transformation et la commercialisation de matériaux recyclables, en maintenant toujours les normes les plus élevées de qualité et d'engagement environnemental.",
+  zh: "凭借多年的行业经验，我们已成为可回收材料转化和商业化的领导者，始终保持最高的质量标准和环保承诺。",
+  tr: "Sektördeki yılların deneyimiyle, geri dönüştürülebilir malzemelerin dönüşümünde ve ticarileştirilmesinde lider haline geldik, her zaman en yüksek kalite standartlarını ve çevresel bağlılığı koruyoruz."
+};
 
 const AboutSection = () => {
+  const { t, i18n } = useTranslation();
+  const [secondText, setSecondText] = useState('');
+  
+  // Actualizar el texto cuando cambie el idioma
+  useEffect(() => {
+    const currentLang = i18n.language.split('-')[0]; // Tomar solo 'es', 'en', etc.
+    setSecondText(additionalTexts[currentLang] || additionalTexts.en);
+  }, [i18n.language]);
+  
   return (
     <CenteredContainer>
-      <SectionTitle>Sobre Nosotros</SectionTitle>
+      <SectionTitle>{t('about.title')}</SectionTitle>
       <ContentBox>
         <AboutText>
-          En TRICYCLE PRODUCTOS SL nos dedicamos a dar una segunda vida a los desechos, transformándolos en recursos valiosos. Nuestra misión es contribuir a un futuro más sostenible a través del reciclaje efectivo de plásticos, metales y papeles.
+          {t('about.description')}
         </AboutText>
         <AboutText>
-          Con años de experiencia en el sector, nos hemos convertido en referentes en la transformación y comercialización de materiales reciclables, manteniendo siempre los más altos estándares de calidad y compromiso ambiental.
+          {secondText}
         </AboutText>
       </ContentBox>
     </CenteredContainer>
@@ -46,4 +65,4 @@ const AboutText = styled.p`
   }
 `;
 
-export default AboutSection; 
+export default AboutSection;

@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "whyChooseUs": "Why Choose Us",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Sustainable Recycling Solutions",
+    "subtitle": "Transforming waste into valuable resources",
+    "button": "Discover How"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "TRICYCLE PRODUCTOS SL is a company specialized in recycling and recovery of plastics, metals, and papers. We contribute to a more sustainable future through effective recycling solutions.",
+    "mission": "Our Mission",
+    "missionText": "To transform waste into valuable resources, promoting the circular economy and minimizing environmental impact."
+  },
+  "products": {
+    "title": "Our Products",
+    "plastic": {
+      "title": "Recycled Plastic",
+      "description": "We offer different types of high-quality recycled plastics for various industrial applications."
+    },
+    "metal": {
+      "title": "Recovered Metal",
+      "description": "We recover and process metals from various sources to give them a second life."
+    },
+    "paper": {
+      "title": "Paper and Cardboard",
+      "description": "We recycle paper and cardboard to create new products, saving trees, water, and energy."
+    },
+    "viewMore": "View more details"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "quality": {
+      "title": "Guaranteed Quality",
+      "description": "Rigorous quality controls in all our processes and products."
+    },
+    "sustainability": {
+      "title": "Sustainable Commitment",
+      "description": "We actively contribute to the circular economy and environmental protection."
+    },
+    "experience": {
+      "title": "Experience and Knowledge",
+      "description": "Years of experience in the recycling sector back us up."
+    },
+    "customization": {
+      "title": "Customized Solutions",
+      "description": "We adapt our products to the specific needs of each client."
+    }
+  },
+  "process": {
+    "title": "Our Process",
+    "collection": "Collection",
+    "sorting": "Sorting",
+    "processing": "Processing",
+    "quality": "Quality Control",
+    "distribution": "Distribution"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "qrCode": "Scan to contact us directly"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+} 

@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "products": "Produits",
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "process": "Processus",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Bienvenue chez Tricycle",
+    "subtitle": "Solutions innovantes pour votre entreprise",
+    "exploreButton": "Explorer les Produits",
+    "contactButton": "Contactez-Nous"
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "subtitle": "Notre histoire et mission",
+    "description": "Nous sommes une entreprise engagée à offrir des solutions innovantes et durables. Depuis nos débuts, nous nous sommes concentrés sur le développement de produits de haute qualité qui répondent aux besoins de nos clients.",
+    "vision": "Notre Vision",
+    "visionText": "Être leaders dans l'industrie, reconnus pour notre excellence, innovation et engagement envers la durabilité.",
+    "mission": "Notre Mission",
+    "missionText": "Fournir des solutions de haute qualité qui améliorent la vie de nos clients, tout en contribuant positivement à la société et à l'environnement."
+  },
+  "products": {
+    "title": "Nos Produits",
+    "subtitle": "Découvrez notre gamme de solutions",
+    "allCategories": "Toutes les Catégories",
+    "viewDetails": "Voir les Détails",
+    "inquire": "Demander des Informations"
+  },
+  "whyChooseUs": {
+    "title": "Pourquoi Nous Choisir",
+    "subtitle": "Raisons de nous faire confiance",
+    "quality": "Haute Qualité",
+    "qualityText": "Nos produits sont fabriqués avec les meilleurs matériaux et répondent aux normes de qualité les plus élevées.",
+    "innovation": "Innovation Continue",
+    "innovationText": "Nous investissons constamment dans la recherche et le développement pour offrir les solutions les plus avancées.",
+    "customerService": "Service Client",
+    "customerServiceText": "Notre équipe de service client est disponible pour vous aider dans tout ce dont vous avez besoin.",
+    "sustainability": "Engagement envers la Durabilité",
+    "sustainabilityText": "Nous travaillons pour minimiser notre impact environnemental et contribuer à un avenir plus durable."
+  },
+  "process": {
+    "title": "Notre Processus",
+    "subtitle": "Comment nous travaillons",
+    "step1": "Consultation Initiale",
+    "step1Text": "Nous analysons vos besoins et exigences pour comprendre pleinement votre projet.",
+    "step2": "Planification et Conception",
+    "step2Text": "Nous développons un plan détaillé et créons des conceptions préliminaires pour votre approbation.",
+    "step3": "Production",
+    "step3Text": "Nous fabriquons les produits en suivant des contrôles de qualité stricts.",
+    "step4": "Livraison et Installation",
+    "step4Text": "Nous livrons et installons les produits à votre emplacement avec professionnalisme.",
+    "step5": "Support Après-Vente",
+    "step5Text": "Nous offrons un support continu pour assurer votre satisfaction à long terme."
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Nous sommes là pour vous aider",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "address": "Adresse",
+    "emailUs": "Envoyez-nous un email",
+    "callUs": "Appelez-nous",
+    "followUs": "Suivez-nous",
+    "formSuccess": "Message envoyé avec succès! Nous vous contacterons bientôt.",
+    "formError": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
+  },
+  "footer": {
+    "rightsReserved": "Tous droits réservés",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "madeWith": "Fait avec"
+  },
+  "notFound": {
+    "title": "Page Non Trouvée",
+    "description": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "backButton": "Retour à l'Accueil"
+  },
+  "common": {
+    "readMore": "Lire Plus",
+    "viewAll": "Voir Tout",
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "soon": "Bientôt Disponible"
+  }
+} 

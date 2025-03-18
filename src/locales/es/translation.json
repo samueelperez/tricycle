@@ -1,0 +1,93 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "products": "Productos",
+    "whyChooseUs": "Por Qué Elegirnos",
+    "process": "Proceso",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Bienvenido a Tricycle",
+    "subtitle": "Soluciones innovadoras para tu negocio",
+    "exploreButton": "Explorar Productos",
+    "contactButton": "Contáctanos"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Nuestra historia y misión",
+    "description": "Somos una empresa comprometida con ofrecer soluciones innovadoras y sostenibles. Desde nuestros inicios, nos hemos enfocado en desarrollar productos de alta calidad que satisfagan las necesidades de nuestros clientes.",
+    "vision": "Nuestra Visión",
+    "visionText": "Ser líderes en la industria, reconocidos por nuestra excelencia, innovación y compromiso con la sostenibilidad.",
+    "mission": "Nuestra Misión",
+    "missionText": "Proporcionar soluciones de alta calidad que mejoren la vida de nuestros clientes, mientras contribuimos positivamente a la sociedad y al medio ambiente."
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "subtitle": "Descubre nuestra gama de soluciones",
+    "allCategories": "Todas las Categorías",
+    "viewDetails": "Ver Detalles",
+    "inquire": "Solicitar Información"
+  },
+  "whyChooseUs": {
+    "title": "Por Qué Elegirnos",
+    "subtitle": "Razones para confiar en nosotros",
+    "quality": "Alta Calidad",
+    "qualityText": "Nuestros productos están fabricados con los mejores materiales y cumplen con los más altos estándares de calidad.",
+    "innovation": "Innovación Constante",
+    "innovationText": "Invertimos constantemente en investigación y desarrollo para ofrecer las soluciones más avanzadas.",
+    "customerService": "Servicio al Cliente",
+    "customerServiceText": "Nuestro equipo de atención al cliente está disponible para ayudarte en todo lo que necesites.",
+    "sustainability": "Compromiso con la Sostenibilidad",
+    "sustainabilityText": "Trabajamos para minimizar nuestro impacto ambiental y contribuir a un futuro más sostenible."
+  },
+  "process": {
+    "title": "Nuestro Proceso",
+    "subtitle": "Cómo trabajamos",
+    "step1": "Consulta Inicial",
+    "step1Text": "Analizamos tus necesidades y requisitos para entender completamente tu proyecto.",
+    "step2": "Planificación y Diseño",
+    "step2Text": "Desarrollamos un plan detallado y creamos diseños preliminares para tu aprobación.",
+    "step3": "Producción",
+    "step3Text": "Fabricamos los productos siguiendo estrictos controles de calidad.",
+    "step4": "Entrega e Instalación",
+    "step4Text": "Entregamos e instalamos los productos en tu ubicación con profesionalidad.",
+    "step5": "Soporte Post-venta",
+    "step5Text": "Ofrecemos soporte continuo para asegurar tu satisfacción a largo plazo."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "address": "Dirección",
+    "emailUs": "Envíanos un correo",
+    "callUs": "Llámanos",
+    "followUs": "Síguenos",
+    "formSuccess": "¡Mensaje enviado con éxito! Te contactaremos pronto.",
+    "formError": "Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo."
+  },
+  "footer": {
+    "rightsReserved": "Todos los derechos reservados",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "madeWith": "Hecho con"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, la página que estás buscando no existe o ha sido movida.",
+    "backButton": "Volver al inicio"
+  },
+  "common": {
+    "readMore": "Leer Más",
+    "viewAll": "Ver Todo",
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "retry": "Reintentar",
+    "soon": "Próximamente"
+  }
+} 
