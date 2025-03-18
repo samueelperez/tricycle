@@ -2,11 +2,86 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 // Importamos las imágenes
 import PEAD from '../assets/images/plastico/PEAD.jpg';
 import PET from '../assets/images/plastico/PET.jpg';
 import tambores from '../assets/images/plastico/tambores.avif';
+
+// Definimos las traducciones de las imágenes
+const slideTranslations = {
+  es: [
+    {
+      title: 'PET Reciclado',
+      description: 'Material plástico reciclado ideal para envases y aplicaciones textiles.'
+    },
+    {
+      title: 'PEAD (Polietileno de Alta Densidad)',
+      description: 'Plástico resistente y versátil para aplicaciones industriales y de consumo.'
+    },
+    {
+      title: 'Tambores y Contenedores',
+      description: 'Soluciones de almacenamiento fabricadas con plástico reciclado de alta calidad.'
+    }
+  ],
+  en: [
+    {
+      title: 'Recycled PET',
+      description: 'Recycled plastic material ideal for packaging and textile applications.'
+    },
+    {
+      title: 'HDPE (High-Density Polyethylene)',
+      description: 'Resistant and versatile plastic for industrial and consumer applications.'
+    },
+    {
+      title: 'Drums and Containers',
+      description: 'Storage solutions made with high-quality recycled plastic.'
+    }
+  ],
+  fr: [
+    {
+      title: 'PET Recyclé',
+      description: 'Matériau plastique recyclé idéal pour les emballages et les applications textiles.'
+    },
+    {
+      title: 'PEHD (Polyéthylène Haute Densité)',
+      description: 'Plastique résistant et polyvalent pour des applications industrielles et de consommation.'
+    },
+    {
+      title: 'Fûts et Conteneurs',
+      description: 'Solutions de stockage fabriquées avec du plastique recyclé de haute qualité.'
+    }
+  ],
+  zh: [
+    {
+      title: '回收PET',
+      description: '适用于包装和纺织应用的回收塑料材料。'
+    },
+    {
+      title: 'HDPE（高密度聚乙烯）',
+      description: '用于工业和消费者应用的耐用多功能塑料。'
+    },
+    {
+      title: '桶和容器',
+      description: '使用高质量回收塑料制成的储存解决方案。'
+    }
+  ],
+  tr: [
+    {
+      title: 'Geri Dönüştürülmüş PET',
+      description: 'Ambalaj ve tekstil uygulamaları için ideal geri dönüştürülmüş plastik malzeme.'
+    },
+    {
+      title: 'HDPE (Yüksek Yoğunluklu Polietilen)',
+      description: 'Endüstriyel ve tüketici uygulamaları için dayanıklı ve çok yönlü plastik.'
+    },
+    {
+      title: 'Varil ve Konteynerler',
+      description: 'Yüksek kaliteli geri dönüştürülmüş plastikten üretilmiş depolama çözümleri.'
+    }
+  ]
+};
 
 const images = [
   {
@@ -22,13 +97,21 @@ const images = [
   {
     src: tambores,
     title: '',
-    description: '.'
+    description: ''
   }
 ];
 
 const PlasticSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(null);
+  const { i18n } = useTranslation();
+  const [texts, setTexts] = useState(slideTranslations.es);
+
+  // Actualizar textos cuando cambie el idioma
+  useEffect(() => {
+    const currentLang = i18n.language.split('-')[0];
+    setTexts(slideTranslations[currentLang] || slideTranslations.en);
+  }, [i18n.language]);
 
   const nextSlide = () => {
     setDirection('right');
@@ -89,10 +172,10 @@ const PlasticSlider = () => {
               opacity: { duration: 0.5 }
             }}
           >
-            <SlideImage src={images[currentIndex].src} alt={images[currentIndex].title} />
+            <SlideImage src={images[currentIndex].src} alt={texts[currentIndex].title} />
             <SlideTextOverlay>
-              <SlideTitle>{images[currentIndex].title}</SlideTitle>
-              <SlideDescription>{images[currentIndex].description}</SlideDescription>
+              <SlideTitle>{texts[currentIndex].title}</SlideTitle>
+              <SlideDescription>{texts[currentIndex].description}</SlideDescription>
             </SlideTextOverlay>
           </SlideMotion>
         </AnimatePresence>

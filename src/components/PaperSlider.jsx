@@ -2,12 +2,66 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 // Importar las nuevas imágenes
 import papelKraft from '../assets/images/papel/papel-kraft.jpg';
 import papelDobleCaraOoc from '../assets/images/papel/papel-craft-de-doble-cara-ooc.jpg';
 
-// Actualizar el array de imágenes con las nuevas
+// Definimos las traducciones para cada slide
+const slideTranslations = {
+  es: [
+    {
+      title: 'Papel Kraft',
+      description: 'Papel resistente ideal para embalajes, con gran resistencia a la tracción y durabilidad.'
+    },
+    {
+      title: 'Residuos de Papel "OCC"',
+      description: ''
+    }
+  ],
+  en: [
+    {
+      title: 'Papel Kraft',
+      description: 'Papel resistente ideal para embalajes, con gran resistencia a la tracción y durabilidad.'
+    },
+    {
+      title: 'Residuos de Papel "OCC"',
+      description: ''
+    }
+  ],
+  fr: [
+    {
+      title: 'Papel Kraft',
+      description: 'Papel resistente ideal pour les emballages, avec une grande résistance à la traction et une durabilité.'
+    },
+    {
+      title: 'Résidus de Papier "OCC"',
+      description: ''
+    }
+  ],
+  zh: [
+    {
+      title: '纸张',
+      description: '纸张坚固，适合包装，具有良好的抗拉强度和耐用性。'
+    },
+    {
+      title: '纸张"OCC"的废弃物',
+      description: ''
+    }
+  ],
+  tr: [
+    {
+      title: 'Kraft Kağıdı',
+      description: 'Kraft kağıt, ambalaj için mükemmel bir malzeme olup, büyük çekme dayanımı ve dayanıklılığa sahiptir.'
+    },
+    {
+      title: 'Kraft Kağıdı "OCC"',
+      description: ''
+    }
+  ]
+};
+
 const images = [
   {
     src: papelKraft,
@@ -24,6 +78,14 @@ const images = [
 const PaperSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(null);
+  const { i18n } = useTranslation();
+  const [texts, setTexts] = useState(slideTranslations.es);
+
+  // Actualizar textos cuando cambie el idioma
+  useEffect(() => {
+    const currentLang = i18n.language.split('-')[0];
+    setTexts(slideTranslations[currentLang] || slideTranslations.en);
+  }, [i18n.language]);
 
   const nextSlide = () => {
     setDirection('right');
@@ -84,10 +146,10 @@ const PaperSlider = () => {
               opacity: { duration: 0.5 }
             }}
           >
-            <SlideImage src={images[currentIndex].src} alt={images[currentIndex].title} />
+            <SlideImage src={images[currentIndex].src} alt={texts[currentIndex].title} />
             <SlideTextOverlay>
-              <SlideTitle>{images[currentIndex].title}</SlideTitle>
-              <SlideDescription>{images[currentIndex].description}</SlideDescription>
+              <SlideTitle>{texts[currentIndex].title}</SlideTitle>
+              <SlideDescription>{texts[currentIndex].description}</SlideDescription>
             </SlideTextOverlay>
           </SlideMotion>
         </AnimatePresence>

@@ -2,11 +2,86 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 // Importamos las imágenes
 import chatarraFerrosa from '../assets/images/metal/chatarra ferrosa.jpg';
 import latasAluminio from '../assets/images/metal/latas de aluminio.jpg';
 import chatarraAlambre from '../assets/images/metal/chatarra-de-alambre.jpg';
+
+// Definimos las traducciones para cada slide
+const slideTranslations = {
+  es: [
+    {
+      title: 'Chatarra Ferrosa',
+      description: 'Recuperamos hierro y acero de diversas fuentes para su reutilización en nuevos productos industriales.'
+    },
+    {
+      title: 'Aluminio Reciclado',
+      description: 'Procesamos latas y otros materiales de aluminio, ahorrando hasta un 95% de energía respecto a la producción primaria.'
+    },
+    {
+      title: 'Alambrón y Cable Metálico',
+      description: 'Reciclamos alambres y cables de acero para su transformación en nuevos productos siderúrgicos, reduciendo la necesidad de extracción de materias primas.'
+    }
+  ],
+  en: [
+    {
+      title: 'Ferrous Scrap',
+      description: 'We recover iron and steel from various sources for reuse in new industrial products.'
+    },
+    {
+      title: 'Recycled Aluminum',
+      description: 'We process cans and other aluminum materials, saving up to 95% energy compared to primary production.'
+    },
+    {
+      title: 'Wire Rod and Metal Cable',
+      description: 'We recycle steel wires and cables for transformation into new steel products, reducing the need for raw material extraction.'
+    }
+  ],
+  fr: [
+    {
+      title: 'Ferraille Ferreuse',
+      description: 'Nous récupérons le fer et l\'acier de diverses sources pour leur réutilisation dans de nouveaux produits industriels.'
+    },
+    {
+      title: 'Aluminium Recyclé',
+      description: 'Nous transformons les canettes et autres matériaux en aluminium, économisant jusqu\'à 95% d\'énergie par rapport à la production primaire.'
+    },
+    {
+      title: 'Fil Machine et Câble Métallique',
+      description: 'Nous recyclons des fils et câbles d\'acier pour leur transformation en nouveaux produits sidérurgiques, réduisant le besoin d\'extraction de matières premières.'
+    }
+  ],
+  zh: [
+    {
+      title: '黑色金属废料',
+      description: '我们从各种来源回收铁和钢，用于新工业产品的再利用。'
+    },
+    {
+      title: '回收铝',
+      description: '我们处理罐头和其他铝材料，与原生产相比节省高达95%的能源。'
+    },
+    {
+      title: '线材和金属电缆',
+      description: '我们回收钢丝和电缆，用于制造新的钢铁产品，减少原材料开采的需求。'
+    }
+  ],
+  tr: [
+    {
+      title: 'Demir Hurdası',
+      description: 'Çeşitli kaynaklardan demir ve çeliği geri kazanarak yeni endüstriyel ürünlerde yeniden kullanıyoruz.'
+    },
+    {
+      title: 'Geri Dönüştürülmüş Alüminyum',
+      description: 'Teneke kutular ve diğer alüminyum malzemeleri işliyoruz, birincil üretime kıyasla %95\'e kadar enerji tasarrufu sağlıyoruz.'
+    },
+    {
+      title: 'Filmaşin ve Metal Kablo',
+      description: 'Çelik tel ve kabloları yeni çelik ürünlere dönüştürmek için geri dönüştürüyor, hammadde çıkarma ihtiyacını azaltıyoruz.'
+    }
+  ]
+};
 
 const images = [
   {
@@ -29,6 +104,14 @@ const images = [
 const MetalSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(null);
+  const { i18n } = useTranslation();
+  const [texts, setTexts] = useState(slideTranslations.es);
+
+  // Actualizar textos cuando cambie el idioma
+  useEffect(() => {
+    const currentLang = i18n.language.split('-')[0];
+    setTexts(slideTranslations[currentLang] || slideTranslations.en);
+  }, [i18n.language]);
 
   const nextSlide = () => {
     setDirection('right');
@@ -89,10 +172,10 @@ const MetalSlider = () => {
               opacity: { duration: 0.5 }
             }}
           >
-            <SlideImage src={images[currentIndex].src} alt={images[currentIndex].title} />
+            <SlideImage src={images[currentIndex].src} alt={texts[currentIndex].title} />
             <SlideTextOverlay>
-              <SlideTitle>{images[currentIndex].title}</SlideTitle>
-              <SlideDescription>{images[currentIndex].description}</SlideDescription>
+              <SlideTitle>{texts[currentIndex].title}</SlideTitle>
+              <SlideDescription>{texts[currentIndex].description}</SlideDescription>
             </SlideTextOverlay>
           </SlideMotion>
         </AnimatePresence>

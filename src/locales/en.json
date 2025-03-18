@@ -95,5 +95,35 @@
     "whyChooseUs": "Why Choose Us",
     "process": "Process",
     "contact": "Contact"
+  },
+  "productDetail": {
+    "backToHome": "← Back to home",
+    "loadingText": "Loading product information...",
+    "aboutMaterial": "About this material",
+    "benefits": "Benefits",
+    "applications": "Applications",
+    "interestedIn": "Interested in our products of",
+    "consultAbout": "Ask about",
+    "products": {
+      "plastico": {
+        "title": "Recycled Plastic",
+        "description": "We offer different types of high-quality recycled plastics for various industrial applications. Our process guarantees the purity and consistency of the material.",
+        "longDescription": "At TRICYCLE we specialize in recycling different types of plastics, transforming them into high-quality raw material ready for use in new products. We work with PET, HDPE, PP and other types of plastics, ensuring maximum purity and consistency in each batch.",
+        "benefits": [
+          "Reduction of waste in landfills",
+          "Saving natural resources",
+          "Lower carbon footprint",
+          "Compliance with environmental regulations",
+          "Contribution to the circular economy"
+        ],
+        "applications": [
+          "Packaging and wrapping",
+          "Consumer products",
+          "Industrial components",
+          "Construction and urban furniture",
+          "Automotive and transportation"
+        ]
+      }
+    }
   }
 } 

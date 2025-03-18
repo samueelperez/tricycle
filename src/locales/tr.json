@@ -99,5 +99,35 @@
     "whyChooseUs": "Neden Bizi Seçmelisiniz",
     "process": "Süreç",
     "contact": "İletişim"
+  },
+  "productDetail": {
+    "backToHome": "← Ana sayfaya dön",
+    "loadingText": "Ürün bilgileri yükleniyor...",
+    "aboutMaterial": "Bu malzeme hakkında",
+    "benefits": "Avantajlar",
+    "applications": "Uygulamalar",
+    "interestedIn": "Ürünlerimizle ilgileniyor musunuz",
+    "consultAbout": "Hakkında danışın",
+    "products": {
+      "plastico": {
+        "title": "Geri Dönüştürülmüş Plastik",
+        "description": "Çeşitli endüstriyel uygulamalar için farklı türde yüksek kaliteli geri dönüştürülmüş plastikler sunuyoruz. Sürecimiz, malzemenin saflığını ve tutarlılığını garanti eder.",
+        "longDescription": "TRICYCLE'da, farklı plastik türlerini geri dönüştürme konusunda uzmanlaşarak, yeni ürünlerde kullanıma hazır yüksek kaliteli hammaddelere dönüştürüyoruz. PET, HDPE, PP ve diğer plastik türleriyle çalışarak, her partide maksimum saflık ve tutarlılık sağlıyoruz.",
+        "benefits": [
+          "Çöp sahalarındaki atıkların azaltılması",
+          "Doğal kaynakların korunması",
+          "Daha düşük karbon ayak izi",
+          "Çevre düzenlemelerine uyum",
+          "Döngüsel ekonomiye katkı"
+        ],
+        "applications": [
+          "Ambalaj ve paketleme",
+          "Tüketici ürünleri",
+          "Endüstriyel bileşenler",
+          "İnşaat ve şehir mobilyaları",
+          "Otomotiv ve ulaşım"
+        ]
+      }
+    }
   }
 } 

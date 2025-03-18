@@ -99,5 +99,35 @@
     "whyChooseUs": "为何选择我们",
     "process": "流程",
     "contact": "联系我们"
+  },
+  "productDetail": {
+    "backToHome": "← 返回首页",
+    "loadingText": "正在加载产品信息...",
+    "aboutMaterial": "关于这种材料",
+    "benefits": "优势",
+    "applications": "应用",
+    "interestedIn": "对我们的产品感兴趣",
+    "consultAbout": "咨询关于",
+    "products": {
+      "plastico": {
+        "title": "回收塑料",
+        "description": "我们为各种工业应用提供不同类型的高质量回收塑料。我们的工艺保证了材料的纯度和一致性。",
+        "longDescription": "在TRICYCLE，我们专注于回收不同类型的塑料，将它们转化为可用于新产品的高质量原材料。我们使用PET、HDPE、PP和其他类型的塑料，确保每批次的最大纯度和一致性。",
+        "benefits": [
+          "减少垃圾填埋场的废物",
+          "节约自然资源",
+          "降低碳足迹",
+          "符合环保法规",
+          "对循环经济的贡献"
+        ],
+        "applications": [
+          "包装",
+          "消费品",
+          "工业组件",
+          "建筑和城市家具",
+          "汽车和运输"
+        ]
+      }
+    }
   }
 } 

@@ -96,5 +96,35 @@
     "whyChooseUs": "Pourquoi Nous Choisir",
     "process": "Processus",
     "contact": "Contact"
+  },
+  "productDetail": {
+    "backToHome": "← Retour à l'accueil",
+    "loadingText": "Chargement des informations du produit...",
+    "aboutMaterial": "À propos de ce matériau",
+    "benefits": "Avantages",
+    "applications": "Applications",
+    "interestedIn": "Intéressé par nos produits de",
+    "consultAbout": "Renseignez-vous sur",
+    "products": {
+      "plastico": {
+        "title": "Plastique Recyclé",
+        "description": "Nous proposons différents types de plastiques recyclés de haute qualité pour diverses applications industrielles. Notre processus garantit la pureté et la cohérence du matériau.",
+        "longDescription": "Chez TRICYCLE, nous nous spécialisons dans le recyclage de différents types de plastiques, les transformant en matière première de haute qualité prête à être utilisée dans de nouveaux produits. Nous travaillons avec le PET, le PEHD, le PP et d'autres types de plastiques, assurant une pureté et une consistance maximales dans chaque lot.",
+        "benefits": [
+          "Réduction des déchets dans les décharges",
+          "Économie des ressources naturelles",
+          "Empreinte carbone réduite",
+          "Conformité aux réglementations environnementales",
+          "Contribution à l'économie circulaire"
+        ],
+        "applications": [
+          "Emballages",
+          "Produits de consommation",
+          "Composants industriels",
+          "Construction et mobilier urbain",
+          "Automobile et transport"
+        ]
+      }
+    }
   }
 }
