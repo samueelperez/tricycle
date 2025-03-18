@@ -88,5 +88,13 @@
     "message": "Désolé, la page que vous recherchez n'existe pas.",
     "button": "Retour à l'accueil"
   },
-  "language": "fr"
+  "language": "fr",
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos de Nous",
+    "products": "Produits",
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "process": "Processus",
+    "contact": "Contact"
+  }
 }

@@ -1,1 +1,103 @@
- 
+{
+  "home": {
+    "title": "三轮车产品",
+    "subtitle": "环保塑料解决方案",
+    "buttonText": "了解更多",
+    "heroLogo": "三轮车"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "三轮车产品是一家专门从事塑料回收材料和环保包装的公司。我们的使命是通过提供无害环境的解决方案，以回收材料为基础，更好地保护我们的地球。",
+    "additionalInfo": "作为行业领导者，我们不断创新，以最有效地利用资源并减少环境影响。我们的团队由行业专家组成，他们致力于开发出既实用又环保的解决方案。"
+  },
+  "process": {
+    "title": "我们的过程",
+    "subtitle": "从回收到制造",
+    "steps": [
+      {
+        "title": "回收收集",
+        "description": "我们收集和分类各种塑料材料，为再利用做准备。"
+      },
+      {
+        "title": "材料处理",
+        "description": "通过先进的技术，我们处理回收材料，使其适用于新产品。"
+      },
+      {
+        "title": "产品制造",
+        "description": "我们将处理后的材料转化为高质量、环保的产品。"
+      },
+      {
+        "title": "质量保证",
+        "description": "每个产品都经过测试和验证，以确保满足最高标准。"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "为什么选择我们",
+    "advantages": [
+      {
+        "title": "环保承诺",
+        "description": "我们的产品和流程对环境产生最小的影响。"
+      },
+      {
+        "title": "质量和耐用性",
+        "description": "我们的产品不仅环保，而且坚固耐用。"
+      },
+      {
+        "title": "创新解决方案",
+        "description": "我们不断开发新技术，提高回收材料的利用效率。"
+      },
+      {
+        "title": "可持续发展",
+        "description": "我们致力于创造一个更清洁、更可持续的未来。"
+      },
+      {
+        "title": "定制产品",
+        "description": "我们可以根据您的特定需求定制解决方案。"
+      },
+      {
+        "title": "竞争价格",
+        "description": "高质量的产品，价格具有竞争力。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们随时为您提供帮助",
+    "form": {
+      "title": "给我们发送消息",
+      "name": "姓名",
+      "email": "电子邮件",
+      "phone": "电话（可选）",
+      "message": "留言",
+      "submit": "发送消息",
+      "namePlaceholder": "您的姓名",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+86 123 4567 8900",
+      "messagePlaceholder": "在此处写下您的留言...",
+      "sending": "发送中...",
+      "success": "消息发送成功！",
+      "error": "发送消息时出错。请重试。"
+    },
+    "contact": {
+      "title": "联系方式",
+      "address": "地址",
+      "phone": "电话",
+      "email": "电子邮件",
+      "schedule": "营业时间",
+      "addressValue": "西班牙马德里主街123号",
+      "scheduleValue": "周一至周五：9:00 - 18:00",
+      "followUs": "关注我们的",
+      "connectWithUs": "与我们联系",
+      "scanToContact": "扫描二维码直接联系我们"
+    }
+  },
+  "navbar": {
+    "home": "首页",
+    "about": "关于我们",
+    "products": "产品",
+    "whyChooseUs": "为何选择我们",
+    "process": "流程",
+    "contact": "联系我们"
+  }
+} 

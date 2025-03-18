@@ -87,5 +87,13 @@
     "title": "Page Not Found",
     "message": "Sorry, the page you are looking for does not exist.",
     "button": "Back to home"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "whyChooseUs": "Why Choose Us",
+    "process": "Process",
+    "contact": "Contact"
   }
 } 

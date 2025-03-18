@@ -87,5 +87,13 @@
     "title": "Página no encontrada",
     "message": "Lo sentimos, la página que estás buscando no existe.",
     "button": "Volver al inicio"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "products": "Productos",
+    "whyChooseUs": "Por Qué Elegirnos",
+    "process": "Proceso",
+    "contact": "Contacto"
   }
 } 

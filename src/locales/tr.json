@@ -1,1 +1,103 @@
- 
+{
+  "home": {
+    "title": "Tricycle Ürünleri",
+    "subtitle": "Çevre Dostu Plastik Çözümler",
+    "buttonText": "Daha Fazla",
+    "heroLogo": "Tricycle"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "Tricycle Products, geri dönüştürülmüş plastik malzemeler ve çevre dostu ambalajlar konusunda uzmanlaşmış bir şirkettir. Misyonumuz, geri dönüştürülmüş malzemelere dayalı çevre dostu çözümler sunarak gezegenimizi daha iyi korumaktır.",
+    "additionalInfo": "Sektörün liderleri olarak, kaynakları en verimli şekilde kullanmak ve çevresel etkiyi azaltmak için sürekli yenilik yapıyoruz. Ekibimiz, hem pratik hem de çevre dostu çözümler geliştirmeye kendini adamış sektör uzmanlarından oluşmaktadır."
+  },
+  "process": {
+    "title": "Sürecimiz",
+    "subtitle": "Geri Dönüşümden Üretime",
+    "steps": [
+      {
+        "title": "Geri Dönüşüm Toplama",
+        "description": "Yeniden kullanım için çeşitli plastik malzemeleri topluyoruz ve sınıflandırıyoruz."
+      },
+      {
+        "title": "Malzeme İşleme",
+        "description": "İleri teknoloji kullanarak, geri dönüştürülmüş malzemeleri yeni ürünler için uygun hale getiriyoruz."
+      },
+      {
+        "title": "Ürün Üretimi",
+        "description": "İşlenmiş malzemeleri yüksek kaliteli, çevre dostu ürünlere dönüştürüyoruz."
+      },
+      {
+        "title": "Kalite Güvencesi",
+        "description": "Her ürün, en yüksek standartları karşıladığından emin olmak için test edilip doğrulanmaktadır."
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Neden Bizi Seçmelisiniz",
+    "advantages": [
+      {
+        "title": "Çevresel Taahhüt",
+        "description": "Ürünlerimiz ve süreçlerimiz çevre üzerinde minimum etki yaratır."
+      },
+      {
+        "title": "Kalite ve Dayanıklılık",
+        "description": "Ürünlerimiz sadece çevre dostu değil, aynı zamanda sağlam ve dayanıklıdır."
+      },
+      {
+        "title": "Yenilikçi Çözümler",
+        "description": "Geri dönüştürülmüş malzemelerin verimliliğini artırmak için sürekli yeni teknolojiler geliştiriyoruz."
+      },
+      {
+        "title": "Sürdürülebilirlik",
+        "description": "Daha temiz ve sürdürülebilir bir gelecek yaratmaya kararlıyız."
+      },
+      {
+        "title": "Özelleştirilmiş Ürünler",
+        "description": "Belirli ihtiyaçlarınıza göre çözümler özelleştirebiliriz."
+      },
+      {
+        "title": "Rekabetçi Fiyatlar",
+        "description": "Rekabetçi fiyatlarla yüksek kaliteli ürünler."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Yardım etmek için buradayız",
+    "form": {
+      "title": "Bize mesaj gönderin",
+      "name": "İsim",
+      "email": "E-posta",
+      "phone": "Telefon (isteğe bağlı)",
+      "message": "Mesaj",
+      "submit": "Mesaj gönder",
+      "namePlaceholder": "İsminiz",
+      "emailPlaceholder": "sizin@email.com",
+      "phonePlaceholder": "+90 500 000 00 00",
+      "messagePlaceholder": "Mesajınızı buraya yazın...",
+      "sending": "Gönderiliyor...",
+      "success": "Mesaj başarıyla gönderildi!",
+      "error": "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "contact": {
+      "title": "İletişim bilgileri",
+      "address": "Adres",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "schedule": "Çalışma saatleri",
+      "addressValue": "Ana Cadde 123, Madrid, İspanya",
+      "scheduleValue": "Pazartesi-Cuma: 9:00 - 18:00",
+      "followUs": "Bizi takip edin",
+      "connectWithUs": "Bizimle bağlantı kurun",
+      "scanToContact": "Doğrudan iletişim için tarayın"
+    }
+  },
+  "navbar": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "whyChooseUs": "Neden Bizi Seçmelisiniz",
+    "process": "Süreç",
+    "contact": "İletişim"
+  }
+} 

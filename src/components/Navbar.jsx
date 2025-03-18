@@ -3,12 +3,14 @@ import styled from 'styled-components';
 import logoImage from '../assets/images/logo.png'; // Importamos la imagen del logo
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ fullpageApi }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('inicio');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
 
   // Mapeo de índices a IDs de sección
   const indexToSection = {
@@ -94,14 +96,18 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setCurrentLanguage(i18n.language);
+  }, [i18n.language]);
+
   // Función para manejar clics en los enlaces
   const handleNavClick = (sectionId) => {
     setActiveSection(sectionId);
     setMobileMenuOpen(false); // Cerrar menú móvil al hacer clic
     
     // Si fullPage.js está disponible, mover a la sección correspondiente
-    if (window.fullpage_api && sectionToIndex[sectionId]) {
-      window.fullpage_api.moveTo(sectionToIndex[sectionId]);
+    if (fullpageApi && sectionToIndex[sectionId]) {
+      fullpageApi.moveTo(sectionToIndex[sectionId]);
     }
   };
 
@@ -109,155 +115,76 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const toggleMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToSection = (sectionNumber) => {
+    if (fullpageApi) {
+      fullpageApi.moveTo(sectionNumber);
+      closeMenu();
+    }
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setCurrentLanguage(lng);
+    closeMenu();
+  };
+
+  const getLanguageLabel = (code) => {
+    const labels = {
+      'es': 'ES',
+      'en': 'EN',
+      'fr': 'FR',
+      'zh': 'ZH',
+      'tr': 'TR'
+    };
+    return labels[code] || code.toUpperCase();
+  };
+
   return (
     <NavbarContainer $isScrolled={isScrolled}>
       <NavbarContent>
-        <LogoContainer>
-          <LogoImage src={logoImage} alt="Logo" />
+        <LogoContainer onClick={() => scrollToSection(1)}>
+          <Logo src={logoImage} alt="Tricycle Products Logo" />
         </LogoContainer>
-        <NavLinks>
-          <NavLink 
-            href="#1" 
-            className={activeSection === 'inicio' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('inicio');
-            }}
-          >
-            {t('navbar.home')}
-          </NavLink>
-          <NavLink 
-            href="#2" 
-            className={activeSection === 'sobre-nosotros' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('sobre-nosotros');
-            }}
-          >
-            {t('navbar.about')}
-          </NavLink>
-          <NavLink 
-            href="#3" 
-            className={activeSection === 'productos' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('productos');
-            }}
-          >
-            {t('navbar.products')}
-          </NavLink>
-          <NavLink 
-            href="#4" 
-            className={activeSection === 'por-que-elegirnos' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('por-que-elegirnos');
-            }}
-          >
-            {t('navbar.whyChooseUs')}
-          </NavLink>
-          <NavLink 
-            href="#5" 
-            className={activeSection === 'proceso' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('proceso');
-            }}
-          >
-            {t('navbar.process')}
-          </NavLink>
-          <NavLink 
-            href="#6" 
-            className={activeSection === 'contacto' ? 'active' : ''}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('contacto');
-            }}
-          >
-            {t('navbar.contact')}
-          </NavLink>
+        <NavLinks isOpen={mobileMenuOpen}>
+          <NavItem onClick={() => scrollToSection(1)}>{t('navbar.home')}</NavItem>
+          <NavItem onClick={() => scrollToSection(2)}>{t('navbar.about')}</NavItem>
+          <NavItem onClick={() => scrollToSection(3)}>{t('navbar.products')}</NavItem>
+          <NavItem onClick={() => scrollToSection(4)}>{t('navbar.whyChooseUs')}</NavItem>
+          <NavItem onClick={() => scrollToSection(5)}>{t('navbar.process')}</NavItem>
+          <NavItem onClick={() => scrollToSection(6)}>{t('navbar.contact')}</NavItem>
         </NavLinks>
-        
-        {/* Añadimos el selector de idioma */}
-        <RightSideContainer>
-          <LanguageSelector />
-          
-          {/* Botón de menú hamburguesa para móvil */}
-          <MobileMenuButton onClick={toggleMobileMenu}>
-            <MenuBar $open={mobileMenuOpen} />
-            <MenuBar $open={mobileMenuOpen} />
-            <MenuBar $open={mobileMenuOpen} />
-          </MobileMenuButton>
-        </RightSideContainer>
-        
-        {/* Menú móvil */}
-        <MobileMenu $open={mobileMenuOpen}>
-          <MobileNavLink 
-            href="#1"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('inicio');
-            }}
-            $active={activeSection === 'inicio'}
-          >
-            {t('navbar.home')}
-          </MobileNavLink>
-          <MobileNavLink 
-            href="#2"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('sobre-nosotros');
-            }}
-            $active={activeSection === 'sobre-nosotros'}
-          >
-            {t('navbar.about')}
-          </MobileNavLink>
-          <MobileNavLink 
-            href="#3"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('productos');
-            }}
-            $active={activeSection === 'productos'}
-          >
-            {t('navbar.products')}
-          </MobileNavLink>
-          <MobileNavLink 
-            href="#4"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('por-que-elegirnos');
-            }}
-            $active={activeSection === 'por-que-elegirnos'}
-          >
-            {t('navbar.whyChooseUs')}
-          </MobileNavLink>
-          <MobileNavLink 
-            href="#5"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('proceso');
-            }}
-            $active={activeSection === 'proceso'}
-          >
-            {t('navbar.process')}
-          </MobileNavLink>
-          <MobileNavLink 
-            href="#6"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('contacto');
-            }}
-            $active={activeSection === 'contacto'}
-          >
-            {t('navbar.contact')}
-          </MobileNavLink>
-          
-          {/* Añadir el selector de idioma también en el menú móvil */}
-          <MobileLanguageContainer>
-            <LanguageSelector />
-          </MobileLanguageContainer>
-        </MobileMenu>
+        <LanguageSelector>
+          <LanguageButton active={currentLanguage === 'en'} onClick={() => changeLanguage('en')}>
+            <FlagEmoji>🇬🇧</FlagEmoji> EN
+          </LanguageButton>
+          <LanguageDropdown>
+            <LanguageOption onClick={() => changeLanguage('es')}>
+              <FlagEmoji>🇪🇸</FlagEmoji> ES
+            </LanguageOption>
+            <LanguageOption onClick={() => changeLanguage('fr')}>
+              <FlagEmoji>🇫🇷</FlagEmoji> FR
+            </LanguageOption>
+            <LanguageOption onClick={() => changeLanguage('zh')}>
+              <FlagEmoji>🇨🇳</FlagEmoji> ZH
+            </LanguageOption>
+            <LanguageOption onClick={() => changeLanguage('tr')}>
+              <FlagEmoji>🇹🇷</FlagEmoji> TR
+            </LanguageOption>
+          </LanguageDropdown>
+        </LanguageSelector>
+        <MenuToggle onClick={toggleMenu}>
+          <MenuBar open={mobileMenuOpen} />
+          <MenuBar open={mobileMenuOpen} />
+          <MenuBar open={mobileMenuOpen} />
+        </MenuToggle>
       </NavbarContent>
     </NavbarContainer>
   );
@@ -309,37 +236,32 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavLink = styled.a`
-  text-decoration: none;
+const NavItem = styled.div`
   color: white;
-  margin: 0 15px;
+  font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   
   &:after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 2px;
     bottom: -5px;
     left: 0;
+    width: 0;
+    height: 2px;
     background-color: white;
     transition: width 0.3s ease;
   }
   
-  &:hover, &.active {
+  &:hover {
     color: #f0f0f0;
     
     &:after {
       width: 100%;
     }
   }
-
-  ${({ mobile }) => mobile && `
-    margin: 15px 0;
-    font-size: 1.2rem;
-  `}
 `;
 
 // Nuevos estilos para el menú móvil
@@ -425,16 +347,10 @@ const MobileNavLink = styled.a`
   }
 `;
 
-const Logo = styled.div`
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white; // Aseguramos que el logo sea blanco contra el fondo azul
-  text-decoration: none;
+const Logo = styled.img`
+  height: 40px;
+  width: auto;
   transition: all 0.3s ease;
-  
-  &:hover {
-    opacity: 0.9;
-  }
 `;
 
 // Nuevos estilos para el contenedor del lado derecho
@@ -446,6 +362,60 @@ const RightSideContainer = styled.div`
 // Contenedor para el selector de idioma en móvil
 const MobileLanguageContainer = styled.div`
   margin-top: 30px;
+`;
+
+const MenuToggle = styled.button`
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    display: block;
+  }
+`;
+
+const LanguageButton = styled.button`
+  background: transparent;
+  border: none;
+  color: ${({ active }) => active ? 'white' : 'gray'};
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: white;
+  }
+`;
+
+const LanguageDropdown = styled.div`
+  position: relative;
+`;
+
+const LanguageOption = styled.button`
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: white;
+  }
+`;
+
+const FlagEmoji = styled.span`
+  margin-right: 5px;
 `;
 
 export default Navbar; 
