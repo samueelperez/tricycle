@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.tricycle.es",
+      "permanent": true
+    }
+  ]
+} 
