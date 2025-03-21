@@ -9,12 +9,9 @@ import heroImage1 from '../assets/images/recycling-bins.jpg';
 // import heroImage2 from '../assets/images/otra-imagen.jpg';
 // import heroImage3 from '../assets/images/tercera-imagen.jpg';
 
-// Array de imágenes para el slider
-const sliderImages = [
-  heroImage1,
-  // Puedes añadir URLs externas si no tienes suficientes imágenes locales
-  'https://images.unsplash.com/photo-1604187351574-c75ca79f5807?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+// Buscar el array de imágenes del slider
+const slideImages = [
+  heroImage,
 ];
 
 // Textos predefinidos para cada idioma
@@ -65,7 +62,7 @@ const HeroSection = ({ fullpageApi }) => {
   // Efecto para cambiar automáticamente las diapositivas
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderImages.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slideImages.length);
     }, 5000); // Cambia cada 5 segundos
     
     return () => clearInterval(interval);
@@ -77,9 +74,12 @@ const HeroSection = ({ fullpageApi }) => {
     }
   };
 
+  // Si hay alguna referencia a la cantidad de slides, la actualizaré
+  const totalSlides = 1;
+
   return (
     <HeroContainer>
-      {sliderImages.map((image, index) => (
+      {slideImages.map((image, index) => (
         <BackgroundSlide 
           key={index} 
           style={{ backgroundImage: `url(${image})` }}
@@ -101,15 +101,11 @@ const HeroSection = ({ fullpageApi }) => {
         </ButtonGroup>
       </HeroContent>
       <ScrollDown onClick={handleScrollDown}>↓</ScrollDown>
-      <SliderDots>
-        {sliderImages.map((_, index) => (
-          <SliderDot 
-            key={index} 
-            $active={currentSlide === index}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
-      </SliderDots>
+      {totalSlides > 1 && (
+        <SliderControls>
+          {/* Código de los controles */}
+        </SliderControls>
+      )}
     </HeroContainer>
   );
 };
@@ -290,12 +286,12 @@ const ScrollDown = styled.button`
   }
 `;
 
-const SliderDots = styled.div`
+const SliderControls = styled.div`
   position: absolute;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
+  display: flex;
   gap: 10px;
   z-index: 2;
 `;
