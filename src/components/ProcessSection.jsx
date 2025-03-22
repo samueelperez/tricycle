@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 import { useTranslation } from 'react-i18next';
+import { FaTruckPickup, FaRecycle, FaIndustry, FaLeaf } from 'react-icons/fa';
+
+// Definir los componentes de iconos para reemplazar emojis
+const Icons = {
+  collection: <FaTruckPickup />,
+  sorting: <FaRecycle />,
+  processing: <FaIndustry />,
+  distribution: <FaLeaf />
+};
 
 // Traducciones para todos los idiomas
 const processTranslations = {
@@ -11,44 +20,44 @@ const processTranslations = {
     titleMobile: "Proceso de Reciclaje",
     desktopSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Recolección',
         description: 'Recolectamos materiales reciclables de empresas, instituciones y puntos de acopio comunitarios, asegurando una logística eficiente y respetuosa con el medio ambiente.'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Clasificación',
         description: 'Separamos meticulosamente los materiales por tipo y calidad, utilizando tecnología avanzada y control de calidad manual para garantizar la pureza de cada categoría.'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Procesamiento',
         description: 'Transformamos los materiales clasificados mediante procesos industriales específicos para cada tipo, convirtiéndolos en materia prima lista para su reutilización.'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribución',
         description: 'Suministramos los materiales reciclados a fabricantes y empresas comprometidas con la sostenibilidad, cerrando el ciclo de la economía circular.'
       }
     ],
     mobileSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Recolección',
         description: 'Recolección eficiente y sostenible'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Clasificación',
         description: 'Separación precisa por categorías'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Procesamiento',
         description: 'Transformación industrial avanzada'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribución',
         description: 'Integración en economía circular'
       }
@@ -59,44 +68,44 @@ const processTranslations = {
     titleMobile: "Recycling Process",
     desktopSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Collection',
         description: 'We collect recyclable materials from companies, institutions and community collection points, ensuring efficient and environmentally-friendly logistics.'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Sorting',
         description: 'We meticulously separate materials by type and quality, using advanced technology and manual quality control to ensure the purity of each category.'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Processing',
         description: 'We transform the sorted materials through specific industrial processes for each type, converting them into raw materials ready for reuse.'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribution',
         description: 'We supply recycled materials to manufacturers and companies committed to sustainability, closing the cycle of the circular economy.'
       }
     ],
     mobileSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Collection',
         description: 'Efficient and sustainable collection'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Sorting',
         description: 'Precise categorization'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Processing',
         description: 'Advanced industrial transformation'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribution',
         description: 'Circular economy integration'
       }
@@ -107,44 +116,44 @@ const processTranslations = {
     titleMobile: "Processus de Recyclage",
     desktopSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Collecte',
         description: "Nous collectons les matériaux recyclables auprès des entreprises, des institutions et des points de collecte communautaires, assurant une logistique efficace et respectueuse de l'environnement."
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Tri',
         description: "Nous séparons méticuleusement les matériaux par type et qualité, en utilisant une technologie avancée et un contrôle de qualité manuel pour garantir la pureté de chaque catégorie."
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Traitement',
         description: "Nous transformons les matériaux triés par des processus industriels spécifiques à chaque type, les convertissant en matières premières prêtes à être réutilisées."
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribution',
         description: "Nous fournissons des matériaux recyclés aux fabricants et aux entreprises engagées dans le développement durable, fermant ainsi le cycle de l'économie circulaire."
       }
     ],
     mobileSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Collecte',
         description: 'Collecte efficace et durable'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Tri',
         description: 'Catégorisation précise'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'Traitement',
         description: 'Transformation industrielle avancée'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Distribution',
         description: "Intégration à l'économie circulaire"
       }
@@ -155,44 +164,44 @@ const processTranslations = {
     titleMobile: "回收流程",
     desktopSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: '收集',
         description: '我们从公司、机构和社区收集点收集可回收材料，确保高效和环保的物流。'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: '分类',
         description: '我们按类型和质量精心分离材料，使用先进技术和人工质量控制，确保每个类别的纯度。'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: '处理',
         description: '我们通过适用于每种类型的特定工业流程转化分类材料，将它们转变为可重复使用的原材料。'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: '分配',
         description: '我们向致力于可持续发展的制造商和公司提供回收材料，完成循环经济周期。'
       }
     ],
     mobileSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: '收集',
         description: '高效可持续的收集'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: '分类',
         description: '精确分类'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: '处理',
         description: '先进工业转型'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: '分配',
         description: '循环经济整合'
       }
@@ -203,44 +212,44 @@ const processTranslations = {
     titleMobile: "Geri Dönüşüm Süreci",
     desktopSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Toplama',
         description: 'Şirketlerden, kurumlardan ve topluluk toplama noktalarından geri dönüştürülebilir malzemeleri topluyoruz, verimli ve çevre dostu lojistik sağlıyoruz.'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Ayırma',
         description: 'Malzemeleri türüne ve kalitesine göre titizlikle ayırıyoruz, her kategorinin saflığını sağlamak için gelişmiş teknoloji ve manuel kalite kontrolü kullanıyoruz.'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'İşleme',
         description: 'Ayrıştırılmış malzemeleri her tür için özel endüstriyel süreçlerle dönüştürüyor, yeniden kullanıma hazır hammaddelere dönüştürüyoruz.'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Dağıtım',
         description: 'Sürdürülebilirliğe bağlı üreticilere ve şirketlere geri dönüştürülmüş malzemeler tedarik ederek döngüsel ekonomi döngüsünü kapatıyoruz.'
       }
     ],
     mobileSteps: [
       {
-        icon: '♻️',
+        icon: 'collection',
         title: 'Toplama',
         description: 'Verimli ve sürdürülebilir toplama'
       },
       {
-        icon: '🔍',
+        icon: 'sorting',
         title: 'Ayırma',
         description: 'Hassas kategorizasyon'
       },
       {
-        icon: '⚙️',
+        icon: 'processing',
         title: 'İşleme',
         description: 'Gelişmiş endüstriyel dönüşüm'
       },
       {
-        icon: '🌱',
+        icon: 'distribution',
         title: 'Dağıtım',
         description: 'Döngüsel ekonomi entegrasyonu'
       }
@@ -251,22 +260,22 @@ const processTranslations = {
 // Datos de los pasos del proceso con iconos - Mantener los arrays originales para no alterar estructura
 const processSteps = [
   {
-    icon: '♻️',
+    icon: 'collection',
     title: 'Recolección',
     description: 'Recolectamos materiales reciclables de empresas, instituciones y puntos de acopio comunitarios, asegurando una logística eficiente y respetuosa con el medio ambiente.'
   },
   {
-    icon: '🔍',
+    icon: 'sorting',
     title: 'Clasificación',
     description: 'Separamos meticulosamente los materiales por tipo y calidad, utilizando tecnología avanzada y control de calidad manual para garantizar la pureza de cada categoría.'
   },
   {
-    icon: '⚙️',
+    icon: 'processing',
     title: 'Procesamiento',
     description: 'Transformamos los materiales clasificados mediante procesos industriales específicos para cada tipo, convirtiéndolos en materia prima lista para su reutilización.'
   },
   {
-    icon: '🌱',
+    icon: 'distribution',
     title: 'Distribución',
     description: 'Suministramos los materiales reciclados a fabricantes y empresas comprometidas con la sostenibilidad, cerrando el ciclo de la economía circular.'
   }
@@ -275,22 +284,22 @@ const processSteps = [
 // Versión compacta para móvil - Mantener el array original
 const mobileSteps = [
   {
-    icon: '♻️',
+    icon: 'collection',
     title: 'Recolección',
     description: 'Recolección eficiente y sostenible'
   },
   {
-    icon: '🔍',
+    icon: 'sorting',
     title: 'Clasificación',
     description: 'Separación precisa por categorías'
   },
   {
-    icon: '⚙️',
+    icon: 'processing',
     title: 'Procesamiento',
     description: 'Transformación industrial avanzada'
   },
   {
-    icon: '🌱',
+    icon: 'distribution',
     title: 'Distribución',
     description: 'Integración en economía circular'
   }
@@ -342,7 +351,7 @@ const ProcessSection = () => {
               $isMobile={true}
             >
               <StepNumber $isMobile={true}>{index + 1}</StepNumber>
-              <StepIcon $isMobile={true}>{step.icon}</StepIcon>
+              <StepIcon $isMobile={true}>{Icons[step.icon]}</StepIcon>
               <StepTitle $isMobile={true}>{step.title}</StepTitle>
               <StepDescription $isMobile={true}>{step.description}</StepDescription>
             </ProcessCard>
@@ -361,7 +370,7 @@ const ProcessSection = () => {
               $isMobile={false}
             >
               <StepNumber $isMobile={false}>{index + 1}</StepNumber>
-              <StepIcon $isMobile={false}>{step.icon}</StepIcon>
+              <StepIcon $isMobile={false}>{Icons[step.icon]}</StepIcon>
               <StepTitle $isMobile={false}>{step.title}</StepTitle>
               <StepDescription $isMobile={false}>{step.description}</StepDescription>
             </ProcessCard>
@@ -454,6 +463,12 @@ const StepIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme }) => theme.colors.primary || '#2E8B57'};
+  
+  svg {
+    width: ${({ $isMobile }) => $isMobile ? '2rem' : '3rem'};
+    height: ${({ $isMobile }) => $isMobile ? '2rem' : '3rem'};
+  }
 `;
 
 const StepTitle = styled.h3`
