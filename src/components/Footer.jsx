@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
-        <Copyright>© {new Date().getFullYear()} TRICYCLE PRODUCTOS SL. {t('footer.rightsReserved')}</Copyright>
+        <Copyright>© {new Date().getFullYear()} TRICYCLE PRODUCTOS SL. {t('')}</Copyright>
       </FooterContent>
     </FooterContainer>
   );

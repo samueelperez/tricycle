@@ -51,33 +51,35 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
       <FullPageContainer>
         <ReactFullpage
           {...fullpageOptions}
           render={({ state, fullpageApi }) => {
             return (
-              <ReactFullpage.Wrapper>
-                <div className="section" data-anchor="inicio">
-                  <HeroSection fullpageApi={fullpageApi} />
-                </div>
-                <CenteredSection className="section" data-anchor="sobre-nosotros" style={{backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                  <AboutSection />
-                </CenteredSection>
-                <CenteredSection className="section" data-anchor="productos" style={{backgroundColor: 'white', overflow: 'auto'}}>
-                  <ProductsSection />
-                </CenteredSection>
-                <CenteredSection className="section" data-anchor="por-que-elegirnos">
-                  <WhyChooseUsSection />
-                </CenteredSection>
-                <CenteredSection className="section" data-anchor="proceso">
-                  <ProcessSection />
-                </CenteredSection>
-                <CenteredSection className="section" data-anchor="contacto">
-                  <ContactSection />
-                  <Footer />
-                </CenteredSection>
-              </ReactFullpage.Wrapper>
+              <>
+                <Navbar fullpageApi={fullpageApi} />
+                <ReactFullpage.Wrapper>
+                  <div className="section" data-anchor="inicio">
+                    <HeroSection fullpageApi={fullpageApi} />
+                  </div>
+                  <CenteredSection className="section" data-anchor="sobre-nosotros" style={{backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <AboutSection />
+                  </CenteredSection>
+                  <CenteredSection className="section" data-anchor="productos" style={{backgroundColor: 'white', overflow: 'auto'}}>
+                    <ProductsSection />
+                  </CenteredSection>
+                  <CenteredSection className="section" data-anchor="por-que-elegirnos">
+                    <WhyChooseUsSection />
+                  </CenteredSection>
+                  <CenteredSection className="section" data-anchor="proceso">
+                    <ProcessSection />
+                  </CenteredSection>
+                  <CenteredSection className="section" data-anchor="contacto">
+                    <ContactSection />
+                    <Footer />
+                  </CenteredSection>
+                </ReactFullpage.Wrapper>
+              </>
             );
           }}
         />

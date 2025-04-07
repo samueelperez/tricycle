@@ -28,7 +28,7 @@ const productTranslations = {
       plastico: {
         title: 'Plástico Reciclado',
         description: 'Ofrecemos diferentes tipos de plásticos reciclados de alta calidad para diversas aplicaciones industriales. Nuestro proceso garantiza la pureza y consistencia del material.',
-        longDescription: 'En TRICYCLE nos especializamos en el reciclaje de diferentes tipos de plásticos, transformándolos en materia prima de alta calidad lista para su uso en nuevos productos. Trabajamos con PET, PEAD, PP y otros tipos de plásticos, asegurando la máxima pureza y consistencia en cada lote.',
+        longDescription: 'En TRICYCLE nos especializamos en el reciclaje de diferentes tipos de plásticos, transformándolos en materia prima de alta calidad lista para su uso en nuevos productos. Trabajamos con PP, HDPE, PET, ABS, PA, PS, ABS, asegurando la máxima pureza y consistencia en cada lote.',
         benefits: [
           'Reducción de residuos en vertederos',
           'Ahorro de recursos naturales',
@@ -364,7 +364,7 @@ const productsData = {
     title: 'Plástico Reciclado',
     image: productImage,
     description: 'Ofrecemos diferentes tipos de plásticos reciclados de alta calidad para diversas aplicaciones industriales. Nuestro proceso garantiza la pureza y consistencia del material.',
-    longDescription: 'En TRICYCLE nos especializamos en el reciclaje de diferentes tipos de plásticos, transformándolos en materia prima de alta calidad lista para su uso en nuevos productos. Trabajamos con PET, PEAD, PP y otros tipos de plásticos, asegurando la máxima pureza y consistencia en cada lote.',
+    longDescription: 'En TRICYCLE nos especializamos en el reciclaje de diferentes tipos de plásticos, transformándolos en materia prima de alta calidad lista para su uso en nuevos productos. Trabajamos con PP, HDPE, PET, ABS, PA, PS, ABS, asegurando la máxima pureza y consistencia en cada lote.',
     benefits: [
       'Reducción de residuos en vertederos',
       'Ahorro de recursos naturales',

@@ -13,72 +13,72 @@ import chatarraAlambre from '../assets/images/metal/chatarra-de-alambre.jpg';
 const slideTranslations = {
   es: [
     {
-      title: 'Chatarra Ferrosa',
+      title: 'Chatarra Ferrosa y no Ferrosa',
       description: 'Recuperamos hierro y acero de diversas fuentes para su reutilización en nuevos productos industriales.'
     },
     {
-      title: 'Aluminio Reciclado',
+      title: 'Chatarra de aluminio',
       description: 'Procesamos latas y otros materiales de aluminio, ahorrando hasta un 95% de energía respecto a la producción primaria.'
     },
     {
-      title: 'Alambrón y Cable Metálico',
-      description: 'Reciclamos alambres y cables de acero para su transformación en nuevos productos siderúrgicos, reduciendo la necesidad de extracción de materias primas.'
+      title: 'Chatarra UBC',
+      description: 'Reciclamos latas de bebidas usadas para su transformación en nuevos productos de aluminio, reduciendo la necesidad de extracción de materias primas.'
     }
   ],
   en: [
     {
-      title: 'Ferrous Scrap',
+      title: 'Ferrous and non ferrous scrap',
       description: 'We recover iron and steel from various sources for reuse in new industrial products.'
     },
     {
-      title: 'Recycled Aluminum',
+      title: 'Aluminum Scrap',
       description: 'We process cans and other aluminum materials, saving up to 95% energy compared to primary production.'
     },
     {
-      title: 'Wire Rod and Metal Cable',
-      description: 'We recycle steel wires and cables for transformation into new steel products, reducing the need for raw material extraction.'
+      title: 'UBC SCRAP',
+      description: 'We recycle used beverage cans for transformation into new aluminum products, reducing the need for raw material extraction.'
     }
   ],
   fr: [
     {
-      title: 'Ferraille Ferreuse',
+      title: 'Ferraille Ferreuse et non Ferreuse',
       description: 'Nous récupérons le fer et l\'acier de diverses sources pour leur réutilisation dans de nouveaux produits industriels.'
     },
     {
-      title: 'Aluminium Recyclé',
+      title: 'Ferraille d\'Aluminium',
       description: 'Nous transformons les canettes et autres matériaux en aluminium, économisant jusqu\'à 95% d\'énergie par rapport à la production primaire.'
     },
     {
-      title: 'Fil Machine et Câble Métallique',
-      description: 'Nous recyclons des fils et câbles d\'acier pour leur transformation en nouveaux produits sidérurgiques, réduisant le besoin d\'extraction de matières premières.'
+      title: 'FERRAILLE UBC',
+      description: 'Nous recyclons des canettes de boisson usagées pour les transformer en nouveaux produits d\'aluminium, réduisant le besoin d\'extraction de matières premières.'
     }
   ],
   zh: [
     {
-      title: '黑色金属废料',
+      title: '黑色和有色金属废料',
       description: '我们从各种来源回收铁和钢，用于新工业产品的再利用。'
     },
     {
-      title: '回收铝',
+      title: '铝废料',
       description: '我们处理罐头和其他铝材料，与原生产相比节省高达95%的能源。'
     },
     {
-      title: '线材和金属电缆',
-      description: '我们回收钢丝和电缆，用于制造新的钢铁产品，减少原材料开采的需求。'
+      title: 'UBC废料',
+      description: '我们回收废弃饮料罐，用于制造新的铝产品，减少原材料开采的需求。'
     }
   ],
   tr: [
     {
-      title: 'Demir Hurdası',
+      title: 'Demir ve Demir Dışı Hurda',
       description: 'Çeşitli kaynaklardan demir ve çeliği geri kazanarak yeni endüstriyel ürünlerde yeniden kullanıyoruz.'
     },
     {
-      title: 'Geri Dönüştürülmüş Alüminyum',
+      title: 'Alüminyum Hurdası',
       description: 'Teneke kutular ve diğer alüminyum malzemeleri işliyoruz, birincil üretime kıyasla %95\'e kadar enerji tasarrufu sağlıyoruz.'
     },
     {
-      title: 'Filmaşin ve Metal Kablo',
-      description: 'Çelik tel ve kabloları yeni çelik ürünlere dönüştürmek için geri dönüştürüyor, hammadde çıkarma ihtiyacını azaltıyoruz.'
+      title: 'UBC HURDA',
+      description: 'Kullanılmış içecek kutularını yeni alüminyum ürünlere dönüştürmek için geri dönüştürüyor, hammadde çıkarma ihtiyacını azaltıyoruz.'
     }
   ]
 };
@@ -86,18 +86,18 @@ const slideTranslations = {
 const images = [
   {
     src: chatarraFerrosa,
-    title: 'Chatarra Ferrosa',
+    title: 'Chatarra Ferrosa y no Ferrosa',
     description: 'Recuperamos hierro y acero de diversas fuentes para su reutilización en nuevos productos industriales.'
   },
   {
     src: latasAluminio,
-    title: 'Aluminio Reciclado',
+    title: 'Chatarra de aluminio',
     description: 'Procesamos latas y otros materiales de aluminio, ahorrando hasta un 95% de energía respecto a la producción primaria.'
   },
   {
     src: chatarraAlambre,
-    title: 'Alambrón y Cable Metálico',
-    description: 'Reciclamos alambres y cables de acero para su transformación en nuevos productos siderúrgicos, reduciendo la necesidad de extracción de materias primas.'
+    title: 'Chatarra UBC',
+    description: 'Reciclamos latas de bebidas usadas para su transformación en nuevos productos de aluminio, reduciendo la necesidad de extracción de materias primas.'
   }
 ];
 

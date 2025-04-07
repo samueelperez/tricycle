@@ -108,6 +108,11 @@ const Navbar = ({ fullpageApi }) => {
     // Si fullPage.js está disponible, mover a la sección correspondiente
     if (fullpageApi && sectionToIndex[sectionId]) {
       fullpageApi.moveTo(sectionToIndex[sectionId]);
+    } else if (window.fullpage_api && sectionToIndex[sectionId]) {
+      window.fullpage_api.moveTo(sectionToIndex[sectionId]);
+    } else {
+      // Alternativa si no está disponible fullpage
+      window.location.hash = sectionId;
     }
   };
 
@@ -126,6 +131,16 @@ const Navbar = ({ fullpageApi }) => {
   const scrollToSection = (sectionNumber) => {
     if (fullpageApi) {
       fullpageApi.moveTo(sectionNumber);
+      closeMenu();
+    } else if (window.fullpage_api) {
+      window.fullpage_api.moveTo(sectionNumber);
+      closeMenu();
+    } else {
+      // Alternativa si no está disponible fullpage
+      const sectionId = indexToSection[sectionNumber];
+      if (sectionId) {
+        window.location.hash = sectionId;
+      }
       closeMenu();
     }
   };
@@ -153,7 +168,7 @@ const Navbar = ({ fullpageApi }) => {
         <LogoContainer onClick={() => scrollToSection(1)}>
           <Logo src={logoImage} alt="Tricycle Products Logo" />
         </LogoContainer>
-        <NavLinks isOpen={mobileMenuOpen}>
+        <NavLinks>
           <NavItem onClick={() => scrollToSection(1)}>{t('navbar.home')}</NavItem>
           <NavItem onClick={() => scrollToSection(2)}>{t('navbar.about')}</NavItem>
           <NavItem onClick={() => scrollToSection(3)}>{t('navbar.products')}</NavItem>
@@ -161,31 +176,45 @@ const Navbar = ({ fullpageApi }) => {
           <NavItem onClick={() => scrollToSection(5)}>{t('navbar.process')}</NavItem>
           <NavItem onClick={() => scrollToSection(6)}>{t('navbar.contact')}</NavItem>
         </NavLinks>
-        <LanguageSelector>
-          <LanguageButton active={currentLanguage === 'en'} onClick={() => changeLanguage('en')}>
-            <FlagEmoji>🇬🇧</FlagEmoji> EN
-          </LanguageButton>
-          <LanguageDropdown>
-            <LanguageOption onClick={() => changeLanguage('es')}>
-              <FlagEmoji>🇪🇸</FlagEmoji> ES
-            </LanguageOption>
-            <LanguageOption onClick={() => changeLanguage('fr')}>
-              <FlagEmoji>🇫🇷</FlagEmoji> FR
-            </LanguageOption>
-            <LanguageOption onClick={() => changeLanguage('zh')}>
-              <FlagEmoji>🇨🇳</FlagEmoji> ZH
-            </LanguageOption>
-            <LanguageOption onClick={() => changeLanguage('tr')}>
-              <FlagEmoji>🇹🇷</FlagEmoji> TR
-            </LanguageOption>
-          </LanguageDropdown>
-        </LanguageSelector>
+        <LanguageSelector />
         <MenuToggle onClick={toggleMenu}>
-          <MenuBar open={mobileMenuOpen} />
-          <MenuBar open={mobileMenuOpen} />
-          <MenuBar open={mobileMenuOpen} />
+          <MenuBar $open={mobileMenuOpen} />
+          <MenuBar $open={mobileMenuOpen} />
+          <MenuBar $open={mobileMenuOpen} />
         </MenuToggle>
       </NavbarContent>
+      
+      {mobileMenuOpen && (
+        <MobileMenu $open={mobileMenuOpen}>
+          <MobileNavItem onClick={() => scrollToSection(1)}>{t('navbar.home')}</MobileNavItem>
+          <MobileNavItem onClick={() => scrollToSection(2)}>{t('navbar.about')}</MobileNavItem>
+          <MobileNavItem onClick={() => scrollToSection(3)}>{t('navbar.products')}</MobileNavItem>
+          <MobileNavItem onClick={() => scrollToSection(4)}>{t('navbar.whyChooseUs')}</MobileNavItem>
+          <MobileNavItem onClick={() => scrollToSection(5)}>{t('navbar.process')}</MobileNavItem>
+          <MobileNavItem onClick={() => scrollToSection(6)}>{t('navbar.contact')}</MobileNavItem>
+          
+          <MobileLanguageContainer>
+            <MobileLanguageTitle>{t('language.select')}</MobileLanguageTitle>
+            <MobileLanguageOptions>
+              <MobileLanguageOption onClick={() => changeLanguage('es')}>
+                <FlagEmoji>🇪🇸</FlagEmoji> ES
+              </MobileLanguageOption>
+              <MobileLanguageOption onClick={() => changeLanguage('en')}>
+                <FlagEmoji>🇬🇧</FlagEmoji> EN
+              </MobileLanguageOption>
+              <MobileLanguageOption onClick={() => changeLanguage('fr')}>
+                <FlagEmoji>🇫🇷</FlagEmoji> FR
+              </MobileLanguageOption>
+              <MobileLanguageOption onClick={() => changeLanguage('zh')}>
+                <FlagEmoji>🇨🇳</FlagEmoji> ZH
+              </MobileLanguageOption>
+              <MobileLanguageOption onClick={() => changeLanguage('tr')}>
+                <FlagEmoji>🇹🇷</FlagEmoji> TR
+              </MobileLanguageOption>
+            </MobileLanguageOptions>
+          </MobileLanguageContainer>
+        </MobileMenu>
+      )}
     </NavbarContainer>
   );
 };
@@ -304,46 +333,67 @@ const MenuBar = styled.span`
 `;
 
 const MobileMenu = styled.div`
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(51, 51, 51, 0.95);
+  background-color: rgba(25, 70, 186, 0.95);
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  gap: 20px;
+  z-index: 999;
+  transition: all 0.3s ease;
   transform: ${({ $open }) => $open ? 'translateY(0)' : 'translateY(-100%)'};
-  transition: transform 0.3s ease-in-out;
+`;
+
+const MobileNavItem = styled.div`
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    display: flex;
+  &:hover {
+    transform: translateY(-3px);
   }
 `;
 
-const MobileNavLink = styled.a`
+const MobileLanguageContainer = styled.div`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const MobileLanguageTitle = styled.div`
   color: white;
-  font-size: 1.5rem;
-  margin: 15px 0;
-  text-decoration: none;
-  font-weight: ${({ $active }) => $active ? '600' : '400'};
-  position: relative;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+`;
+
+const MobileLanguageOptions = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const MobileLanguageOption = styled.div`
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
   
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: ${({ $active }) => $active ? '100%' : '0'};
-    height: 2px;
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-  
-  &:hover:after {
-    width: 100%;
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
   }
 `;
 
@@ -357,11 +407,6 @@ const Logo = styled.img`
 const RightSideContainer = styled.div`
   display: flex;
   align-items: center;
-`;
-
-// Contenedor para el selector de idioma en móvil
-const MobileLanguageContainer = styled.div`
-  margin-top: 30px;
 `;
 
 const MenuToggle = styled.button`
@@ -385,7 +430,7 @@ const MenuToggle = styled.button`
 const LanguageButton = styled.button`
   background: transparent;
   border: none;
-  color: ${({ active }) => active ? 'white' : 'gray'};
+  color: ${({ $active }) => $active ? 'white' : 'gray'};
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;

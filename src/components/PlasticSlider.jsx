@@ -8,77 +8,98 @@ import { useTranslation } from 'react-i18next';
 import PEAD from '../assets/images/plastico/PEAD.jpg';
 import PET from '../assets/images/plastico/PET.jpg';
 import tambores from '../assets/images/plastico/tambores.avif';
+import PETFlakes from '../assets/images/plastico/PET-flakes.webp';
 
 // Definimos las traducciones de las imágenes
 const slideTranslations = {
   es: [
     {
-      title: 'PET Reciclado',
-      description: 'Material plástico reciclado ideal para envases y aplicaciones textiles.'
+      title: 'OCC carton',
+      description: 'Cartón reciclado de alta calidad, ideal para embalajes ecológicos y aplicaciones sostenibles.'
     },
     {
-      title: 'PEAD (Polietileno de Alta Densidad)',
-      description: 'Plástico resistente y versátil para aplicaciones industriales y de consumo.'
+      title: 'Recycled Pellets ( ABS-PS-PP-HDPE- PA)',
+      description: 'Pellets reciclados de diversos polímeros, perfectos para la fabricación de nuevos productos plásticos sostenibles.'
     },
     {
-      title: 'Tambores y Contenedores',
-      description: 'Soluciones de almacenamiento fabricadas con plástico reciclado de alta calidad.'
+      title: 'All tupes of Plastic Regrind ( plasticos triturados)',
+      description: 'Plásticos triturados de diferentes tipos, preparados para su reprocesamiento en la industria del reciclaje.'
+    },
+    {
+      title: 'PET Flakes',
+      description: 'Escamas de PET reciclado de alta pureza, listas para ser transformadas en nuevos productos sostenibles.'
     }
   ],
   en: [
     {
-      title: 'Recycled PET',
-      description: 'Recycled plastic material ideal for packaging and textile applications.'
+      title: 'OCC Cardboard',
+      description: 'High-quality recycled cardboard, ideal for eco-friendly packaging and sustainable applications.'
     },
     {
-      title: 'HDPE (High-Density Polyethylene)',
-      description: 'Resistant and versatile plastic for industrial and consumer applications.'
+      title: 'Recycled Pellets (ABS-PS-PP-HDPE-PA)',
+      description: 'Recycled pellets of various polymers, perfect for manufacturing new sustainable plastic products.'
     },
     {
-      title: 'Drums and Containers',
-      description: 'Storage solutions made with high-quality recycled plastic.'
+      title: 'All Types of Plastic Regrind',
+      description: 'Ground plastics of different types, prepared for reprocessing in the recycling industry.'
+    },
+    {
+      title: 'PET Flakes',
+      description: 'High-purity recycled PET flakes, ready to be transformed into new sustainable products.'
     }
   ],
   fr: [
     {
-      title: 'PET Recyclé',
-      description: 'Matériau plastique recyclé idéal pour les emballages et les applications textiles.'
+      title: 'Carton OCC',
+      description: 'Carton recyclé de haute qualité, idéal pour les emballages écologiques et les applications durables.'
     },
     {
-      title: 'PEHD (Polyéthylène Haute Densité)',
-      description: 'Plastique résistant et polyvalent pour des applications industrielles et de consommation.'
+      title: 'Granulés Recyclés (ABS-PS-PP-PEHD-PA)',
+      description: 'Granulés recyclés de divers polymères, parfaits pour la fabrication de nouveaux produits plastiques durables.'
     },
     {
-      title: 'Fûts et Conteneurs',
-      description: 'Solutions de stockage fabriquées avec du plastique recyclé de haute qualité.'
+      title: 'Tous Types de Broyats Plastiques',
+      description: 'Plastiques broyés de différents types, préparés pour leur retraitement dans l\'industrie du recyclage.'
+    },
+    {
+      title: 'Paillettes de PET',
+      description: 'Paillettes de PET recyclé de haute pureté, prêtes à être transformées en nouveaux produits durables.'
     }
   ],
   zh: [
     {
-      title: '回收PET',
-      description: '适用于包装和纺织应用的回收塑料材料。'
+      title: 'OCC 纸板',
+      description: '高质量回收纸板，适用于环保包装和可持续应用。'
     },
     {
-      title: 'HDPE（高密度聚乙烯）',
-      description: '用于工业和消费者应用的耐用多功能塑料。'
+      title: '回收塑料颗粒 (ABS-PS-PP-HDPE-PA)',
+      description: '各种聚合物的回收颗粒，适用于制造新的可持续塑料产品。'
     },
     {
-      title: '桶和容器',
-      description: '使用高质量回收塑料制成的储存解决方案。'
+      title: '各类塑料再研磨料',
+      description: '不同类型的塑料磨碎料，可用于回收行业的再加工。'
+    },
+    {
+      title: 'PET 薄片',
+      description: '高纯度回收PET薄片，可用于制造新的可持续产品。'
     }
   ],
   tr: [
     {
-      title: 'Geri Dönüştürülmüş PET',
-      description: 'Ambalaj ve tekstil uygulamaları için ideal geri dönüştürülmüş plastik malzeme.'
+      title: 'OCC Karton',
+      description: 'Çevre dostu ambalaj ve sürdürülebilir uygulamalar için ideal, yüksek kaliteli geri dönüştürülmüş karton.'
     },
     {
-      title: 'HDPE (Yüksek Yoğunluklu Polietilen)',
-      description: 'Endüstriyel ve tüketici uygulamaları için dayanıklı ve çok yönlü plastik.'
+      title: 'Geri Dönüştürülmüş Peletler (ABS-PS-PP-HDPE-PA)',
+      description: 'Yeni sürdürülebilir plastik ürünlerin üretimi için mükemmel, çeşitli polimerlerden geri dönüştürülmüş peletler.'
     },
     {
-      title: 'Varil ve Konteynerler',
-      description: 'Yüksek kaliteli geri dönüştürülmüş plastikten üretilmiş depolama çözümleri.'
+      title: 'Her Tür Plastik Öğütme',
+      description: 'Geri dönüşüm endüstrisinde yeniden işlenmek üzere hazırlanmış farklı türdeki öğütülmüş plastikler.'
+    },
+    {
+      title: 'PET Pulları',
+      description: 'Yeni sürdürülebilir ürünlere dönüştürülmeye hazır, yüksek saflıkta geri dönüştürülmüş PET pulları.'
     }
   ]
 };
@@ -96,6 +117,11 @@ const images = [
   },
   {
     src: tambores,
+    title: '',
+    description: ''
+  },
+  {
+    src: PETFlakes,
     title: '',
     description: ''
   }
