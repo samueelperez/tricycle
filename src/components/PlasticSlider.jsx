@@ -14,15 +14,15 @@ import PETFlakes from '../assets/images/plastico/PET-flakes.webp';
 const slideTranslations = {
   es: [
     {
-      title: 'Recycled Pellets ( ABS-PS-PP-HDPE- PA)',
+      title: 'Pellets Reciclados ( ABS-PS-PP-HDPE- PA)',
       description: 'Pellets reciclados de diversos polímeros, perfectos para la fabricación de nuevos productos plásticos sostenibles.'
     },
     {
-      title: 'All tupes of Plastic Regrind ( plasticos triturados)',
+      title: 'Todos los tipos de plasticos triturados',
       description: 'Plásticos triturados de diferentes tipos, preparados para su reprocesamiento en la industria del reciclaje.'
     },
     {
-      title: 'PET Flakes',
+      title: 'PET triturado',
       description: 'Escamas de PET reciclado de alta pureza, listas para ser transformadas en nuevos productos sostenibles.'
     }
   ],

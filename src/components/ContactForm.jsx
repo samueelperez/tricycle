@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const ContactForm = ({ translations }) => {
   const { i18n } = useTranslation();
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,18 +44,28 @@ const ContactForm = ({ translations }) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     
-    // Simulación de envío de formulario
     try {
-      // Aquí iría la lógica real de envío de formulario
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      // Envío del correo usando EmailJS
+      const result = await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      if (result.text === 'OK') {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Error al enviar el mensaje:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -62,7 +75,7 @@ const ContactForm = ({ translations }) => {
   return (
     <FormContainer>
       <FormTitle>{t.title}</FormTitle>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} ref={formRef}>
         <FormGroup>
           <FormLabel htmlFor="name">{t.name}</FormLabel>
           <FormInput
