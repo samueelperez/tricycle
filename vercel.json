@@ -1,14 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "tricycle.es"
         }
       ],
-      "destination": "https://www.tricycle.es/:path*",
+      "destination": "https://www.tricycle.es/$1",
       "permanent": true
     }
   ]
