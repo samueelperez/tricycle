@@ -14,10 +14,6 @@ import PETFlakes from '../assets/images/plastico/PET-flakes.webp';
 const slideTranslations = {
   es: [
     {
-      title: 'OCC carton',
-      description: 'Cartón reciclado de alta calidad, ideal para embalajes ecológicos y aplicaciones sostenibles.'
-    },
-    {
       title: 'Recycled Pellets ( ABS-PS-PP-HDPE- PA)',
       description: 'Pellets reciclados de diversos polímeros, perfectos para la fabricación de nuevos productos plásticos sostenibles.'
     },
@@ -31,10 +27,6 @@ const slideTranslations = {
     }
   ],
   en: [
-    {
-      title: 'OCC Cardboard',
-      description: 'High-quality recycled cardboard, ideal for eco-friendly packaging and sustainable applications.'
-    },
     {
       title: 'Recycled Pellets (ABS-PS-PP-HDPE-PA)',
       description: 'Recycled pellets of various polymers, perfect for manufacturing new sustainable plastic products.'
@@ -50,10 +42,6 @@ const slideTranslations = {
   ],
   fr: [
     {
-      title: 'Carton OCC',
-      description: 'Carton recyclé de haute qualité, idéal pour les emballages écologiques et les applications durables.'
-    },
-    {
       title: 'Granulés Recyclés (ABS-PS-PP-PEHD-PA)',
       description: 'Granulés recyclés de divers polymères, parfaits pour la fabrication de nouveaux produits plastiques durables.'
     },
@@ -68,10 +56,6 @@ const slideTranslations = {
   ],
   zh: [
     {
-      title: 'OCC 纸板',
-      description: '高质量回收纸板，适用于环保包装和可持续应用。'
-    },
-    {
       title: '回收塑料颗粒 (ABS-PS-PP-HDPE-PA)',
       description: '各种聚合物的回收颗粒，适用于制造新的可持续塑料产品。'
     },
@@ -85,10 +69,6 @@ const slideTranslations = {
     }
   ],
   tr: [
-    {
-      title: 'OCC Karton',
-      description: 'Çevre dostu ambalaj ve sürdürülebilir uygulamalar için ideal, yüksek kaliteli geri dönüştürülmüş karton.'
-    },
     {
       title: 'Geri Dönüştürülmüş Peletler (ABS-PS-PP-HDPE-PA)',
       description: 'Yeni sürdürülebilir plastik ürünlerin üretimi için mükemmel, çeşitli polimerlerden geri dönüştürülmüş peletler.'
@@ -105,11 +85,6 @@ const slideTranslations = {
 };
 
 const images = [
-  {
-    src: PET,
-    title: '',
-    description: ''
-  },
   {
     src: PEAD,
     title: '',

@@ -139,7 +139,16 @@ const Navbar = ({ fullpageApi }) => {
       // Alternativa si no está disponible fullpage
       const sectionId = indexToSection[sectionNumber];
       if (sectionId) {
-        window.location.hash = sectionId;
+        // Verificar si estamos en la página principal
+        const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+        
+        if (isHomePage) {
+          // Si estamos en la página principal, simplemente navegar al ancla
+          window.location.hash = sectionId;
+        } else {
+          // Si estamos en otra página, volver a la página principal y luego navegar al ancla
+          window.location.href = '/#' + sectionId;
+        }
       }
       closeMenu();
     }
@@ -165,7 +174,14 @@ const Navbar = ({ fullpageApi }) => {
   return (
     <NavbarContainer $isScrolled={isScrolled}>
       <NavbarContent>
-        <LogoContainer onClick={() => scrollToSection(1)}>
+        <LogoContainer onClick={() => {
+          const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+          if (isHomePage) {
+            scrollToSection(1);
+          } else {
+            window.location.href = '/';
+          }
+        }}>
           <Logo src={logoImage} alt="Tricycle Products Logo" />
         </LogoContainer>
         <NavLinks>
