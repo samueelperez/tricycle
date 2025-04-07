@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import logoImage from '../assets/images/logo.png'; // Importamos la imagen del logo
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = ({ fullpageApi }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,6 +11,8 @@ const Navbar = ({ fullpageApi }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Mapeo de índices a IDs de sección
   const indexToSection = {
@@ -34,155 +36,46 @@ const Navbar = ({ fullpageApi }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    // Función para manejar el evento afterLoad de fullPage.js
-    const handleFullPageLoad = (origin, destination) => {
-      const sectionIndex = destination.index + 1;
-      const sectionId = indexToSection[sectionIndex] || 'inicio';
-      setActiveSection(sectionId);
-    };
-    
-    // Verificar si fullPage está disponible y añadir el evento
-    if (window.fullpage_api) {
-      window.fullpage_api.setAllowScrolling(true);
-      window.fullpage_api.setKeyboardScrolling(true);
-      window.fullpage_api.setRecordHistory(true);
-      
-      // Añadir evento afterLoad
-      document.addEventListener('afterLoad', handleFullPageLoad);
-    }
-    
-    // Función para detectar cambios en el hash de la URL
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      
-      if (hash) {
-        // Intentar interpretar el hash como un índice
-        const sectionIndex = parseInt(hash);
-        
-        if (!isNaN(sectionIndex) && indexToSection[sectionIndex]) {
-          // Si es un número válido, usar el mapeo de índice a sección
-          setActiveSection(indexToSection[sectionIndex]);
-        } else if (Object.values(indexToSection).includes(hash)) {
-          // Si es un nombre de sección válido, usarlo directamente
-          setActiveSection(hash);
-        }
-      } else {
-        // Si no hay hash, asumir que estamos en la sección de inicio
-        setActiveSection('inicio');
-      }
-    };
-    
-    window.addEventListener('hashchange', handleHashChange);
-    
-    // Establecer la sección inicial basada en el hash actual
-    handleHashChange();
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('hashchange', handleHashChange);
-      
-      if (window.fullpage_api) {
-        document.removeEventListener('afterLoad', handleFullPageLoad);
-      }
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setCurrentLanguage(i18n.language);
-  }, [i18n.language]);
-
-  // Función para manejar clics en los enlaces
-  const handleNavClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setMobileMenuOpen(false); // Cerrar menú móvil al hacer clic
+  const scrollToSection = (index) => {
+    const isHomePage = location.pathname === '/';
     
-    // Si fullPage.js está disponible, mover a la sección correspondiente
-    if (fullpageApi && sectionToIndex[sectionId]) {
-      fullpageApi.moveTo(sectionToIndex[sectionId]);
-    } else if (window.fullpage_api && sectionToIndex[sectionId]) {
-      window.fullpage_api.moveTo(sectionToIndex[sectionId]);
-    } else {
-      // Alternativa si no está disponible fullpage
-      window.location.hash = sectionId;
+    if (!isHomePage) {
+      navigate('/');
+      // Esperar a que la navegación se complete antes de intentar desplazarse
+      setTimeout(() => {
+        if (window.fullpage_api) {
+          window.fullpage_api.moveTo(index);
+        }
+      }, 100);
+    } else if (fullpageApi) {
+      fullpageApi.moveTo(index);
     }
-  };
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+    
+    setMobileMenuOpen(false);
   };
 
   const toggleMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  const closeMenu = () => {
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setCurrentLanguage(lang);
     setMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (sectionNumber) => {
-    if (fullpageApi) {
-      fullpageApi.moveTo(sectionNumber);
-      closeMenu();
-    } else if (window.fullpage_api) {
-      window.fullpage_api.moveTo(sectionNumber);
-      closeMenu();
-    } else {
-      // Alternativa si no está disponible fullpage
-      const sectionId = indexToSection[sectionNumber];
-      if (sectionId) {
-        // Verificar si estamos en la página principal
-        const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
-        
-        if (isHomePage) {
-          // Si estamos en la página principal, simplemente navegar al ancla
-          window.location.hash = sectionId;
-        } else {
-          // Si estamos en otra página, volver a la página principal y luego navegar al ancla
-          window.location.href = '/#' + sectionId;
-        }
-      }
-      closeMenu();
-    }
-  };
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    setCurrentLanguage(lng);
-    closeMenu();
-  };
-
-  const getLanguageLabel = (code) => {
-    const labels = {
-      'es': 'ES',
-      'en': 'EN',
-      'fr': 'FR',
-      'zh': 'ZH',
-      'tr': 'TR'
-    };
-    return labels[code] || code.toUpperCase();
   };
 
   return (
     <NavbarContainer $isScrolled={isScrolled}>
       <NavbarContent>
-        <LogoContainer onClick={() => {
-          const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
-          if (isHomePage) {
-            scrollToSection(1);
-          } else {
-            window.location.href = '/';
-          }
-        }}>
-          <Logo src={logoImage} alt="Tricycle Products Logo" />
+        <LogoContainer onClick={() => scrollToSection(1)}>
+          <Logo src={logoImage} alt="Tricycle Logo" />
         </LogoContainer>
         <NavLinks>
           <NavItem onClick={() => scrollToSection(1)}>{t('navbar.home')}</NavItem>
