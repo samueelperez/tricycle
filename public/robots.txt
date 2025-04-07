@@ -1,0 +1,42 @@
+# Archivo robots.txt para www.tricycle.es
+# Última actualización: 07/04/2025
+
+# Reglas globales para todos los robots
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Directorios y archivos que no deberían ser indexados
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Parámetros de URL que no deben ser indexados (sorting, filtering, etc.)
+Disallow: /*?sort=
+Disallow: /*?filter=
+Disallow: /*?q=
+Disallow: /*?s=
+Disallow: /*?search=
+
+# Instrucciones específicas para Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+
+# Instrucciones para bots de redes sociales
+User-agent: Twitterbot
+Allow: /
+Allow: /images/
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /images/
+
+# Sitemap
+Sitemap: https://www.tricycle.es/sitemap.xml
