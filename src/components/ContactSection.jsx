@@ -24,8 +24,8 @@ const contactInfo = [
   {
     icon: '✉️',
     titleKey: 'contact.email',
-    details: 'info@tricycleproducts.es',
-    link: 'mailto:info@tricycleproducts.es',
+    details: 'info@tricycle.es',
+    link: 'mailto:info@tricycle.es',
     isLink: true
   },
   {
