@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -430,10 +430,11 @@ const productsData = {
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   
   // Seleccionar el idioma actual
@@ -444,6 +445,14 @@ const ProductDetail = () => {
     const currentLang = i18n.language.split('-')[0]; // Obtener código de idioma principal (es, en, fr, etc.)
     setTranslations(productTranslations[currentLang] || productTranslations.en);
   }, [i18n.language]);
+
+  // Validación de ID y redirección si no es válido
+  useEffect(() => {
+    const validIds = ['plastico', 'metal', 'papel'];
+    if (!validIds.includes(id)) {
+      navigate('/');
+    }
+  }, [id, navigate]);
 
   useEffect(() => {
     // Simulamos una carga de datos
@@ -478,6 +487,10 @@ const ProductDetail = () => {
       }
     }, 100);
   };
+
+  if (!id) {
+    return <div>Cargando...</div>;
+  }
 
   if (loading) {
     return <LoadingContainer>{translations.loadingText}</LoadingContainer>;

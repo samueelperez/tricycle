@@ -1,15 +1,15 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "tricycle.es"
-        }
-      ],
-      "destination": "https://www.tricycle.es/$1",
-      "permanent": true
+      "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/[^.]+",
+      "dest": "/",
+      "status": 200
     }
   ]
 } 
