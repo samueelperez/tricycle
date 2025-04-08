@@ -3,14 +3,14 @@
 // Crea una cuenta en https://www.emailjs.com/ si aún no tienes una
 
 export const EMAILJS_CONFIG = {
-  // ID del servicio creado en EmailJS
-  SERVICE_ID: 'service_id',
+  // ID del servicio SMTP configurado en EmailJS
+  SERVICE_ID: 'service_fqqz02j',
   
-  // ID de la plantilla creada en EmailJS
-  TEMPLATE_ID: 'template_id',
+  // ID de la plantilla de correo
+  TEMPLATE_ID: 'template_26391bx',
   
-  // Clave pública de tu cuenta de EmailJS
-  PUBLIC_KEY: 'public_key',
+  // Clave pública de EmailJS
+  PUBLIC_KEY: '6KRN44MDKcSxK7rOL'
 };
 
 // Instrucciones para configurar EmailJS:

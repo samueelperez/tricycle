@@ -2,29 +2,42 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+    <meta name="msapplication-TileColor" content="#1946ba" />
+    <meta name="theme-color" content="#1946ba" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TRICYCLE PRODUCTOS SL - Especialistas en reciclaje de plásticos, metales y papeles. Contribuimos a un futuro más sostenible a través de soluciones de reciclaje efectivas." />
-    <meta name="keywords" content="reciclaje, plástico reciclado, metal recuperado, papel reciclado, sostenibilidad, economía circular, medio ambiente" />
-    <meta name="author" content="TRICYCLE PRODUCTOS SL" />
     
-    <!-- Open Graph / Facebook / WhatsApp -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TRICYCLE SL - Especialistas en reciclaje de plásticos, metales y papeles. Contribuimos a un futuro más sostenible a través de soluciones de reciclaje efectivas en Castellón, España." />
+    <meta name="keywords" content="reciclaje, plástico reciclado, metal recuperado, papel reciclado, sostenibilidad, economía circular, Castellón, España" />
+    <meta name="author" content="TRICYCLE SL" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tricycleproducts.es/" />
-    <meta property="og:title" content="TRICYCLE PRODUCTOS SL | Reciclaje Sostenible" />
+    <meta property="og:url" content="https://tricycle.es/" />
+    <meta property="og:title" content="TRICYCLE SL | Soluciones de Reciclaje Sostenibles" />
     <meta property="og:description" content="Transformamos residuos en recursos. Especialistas en reciclaje de plásticos, metales y papeles." />
-    <meta property="og:image" content="https://tricycleproducts.es/og-image.jpg" />
+    <meta property="og:image" content="https://tricycle.es/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="TRICYCLE PRODUCTOS" />
+    <meta property="og:site_name" content="TRICYCLE" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://tricycleproducts.es/" />
-    <meta property="twitter:title" content="TRICYCLE PRODUCTOS SL | Reciclaje Sostenible" />
-    <meta property="twitter:description" content="Transformamos residuos en recursos. Especialistas en reciclaje de plásticos, metales y papeles." />
-    <meta property="twitter:image" content="https://tricycleproducts.es/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://tricycle.es/" />
+    <meta name="twitter:title" content="TRICYCLE SL | Soluciones de Reciclaje Sostenibles" />
+    <meta name="twitter:description" content="Transformamos residuos en recursos. Especialistas en reciclaje de plásticos, metales y papeles." />
+    <meta name="twitter:image" content="https://tricycle.es/og-image.jpg" />
     
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +56,33 @@
     <title>TRICYCLE SL | Soluciones de Reciclaje Sostenibles</title>
   </head>
   <body>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TRICYCLE SL",
+      "url": "https://tricycle.es",
+      "logo": "https://tricycle.es/logo.svg",
+      "description": "Especialistas en reciclaje de plásticos, metales y papeles. Contribuimos a un futuro más sostenible a través de soluciones de reciclaje efectivas.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/Pérez Dolz, 8",
+        "addressLocality": "Castellón",
+        "postalCode": "12003",
+        "addressCountry": "ES"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+34-964-041-556",
+        "contactType": "customer service",
+        "email": "info@tricycle.es"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/tricycle-sl",
+        "https://twitter.com/tricycle_es"
+      ]
+    }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
