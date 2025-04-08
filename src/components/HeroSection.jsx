@@ -17,7 +17,7 @@ const slideImages = [
 // Textos predefinidos para cada idioma
 const heroTexts = {
   es: {
-    title: "Transformamos desechos en recursos sostenibles",
+    title: "Transformamo desechos en recursos sostenibles",
     subtitle: "Soluciones innovadoras de reciclaje para plásticos, metales y papeles que contribuyen a un futuro más verde",
     primaryBtn: "Ver Productos",
     secondaryBtn: "Más Sobre Nosotros"
