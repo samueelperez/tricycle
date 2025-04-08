@@ -4,6 +4,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { theme } from './styles/theme';
 import MobileStyles from './components/MobileStyles';
+import Layout from './components/Layout';
 
 // Importamos los componentes de página
 import HomePage from './pages/HomePage';
@@ -25,11 +26,16 @@ const App = () => {
       <GlobalStyles />
       <MobileStyles />
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/productos/:id" element={<ProductDetail />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/productos/:id" element={<ProductDetail />} />
+            <Route path="/productos/plastico" element={<ProductDetail />} />
+            <Route path="/productos/metal" element={<ProductDetail />} />
+            <Route path="/productos/papel" element={<ProductDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
       </Router>
     </ThemeProvider>
   );

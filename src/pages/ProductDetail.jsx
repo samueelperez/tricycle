@@ -430,8 +430,12 @@ const productsData = {
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Obtener el ID del producto de la URL o del path
+  const productId = id || location.pathname.split('/').pop();
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -446,28 +450,28 @@ const ProductDetail = () => {
     setTranslations(productTranslations[currentLang] || productTranslations.en);
   }, [i18n.language]);
 
-  // Validación de ID y redirección si no es válido
   useEffect(() => {
-    const validIds = ['plastico', 'metal', 'papel'];
-    if (!validIds.includes(id)) {
+    const validProducts = ['plastico', 'metal', 'papel'];
+    if (!validProducts.includes(productId)) {
       navigate('/');
+      return;
     }
-  }, [id, navigate]);
+  }, [productId, navigate]);
 
   useEffect(() => {
     // Simulamos una carga de datos
     setLoading(true);
     
     setTimeout(() => {
-      if (productsData[id]) {
-        setProduct(productsData[id]);
+      if (productsData[productId]) {
+        setProduct(productsData[productId]);
         setLoading(false);
       } else {
         setError('Producto no encontrado');
         setLoading(false);
       }
     }, 500);
-  }, [id]);
+  }, [productId]);
 
   // Función para manejar el clic en el botón de contacto
   const handleContactClick = (e) => {
@@ -488,8 +492,9 @@ const ProductDetail = () => {
     }, 100);
   };
 
-  if (!id) {
-    return <div>Cargando...</div>;
+  // Si no hay ID válido, mostrar loading
+  if (!productId) {
+    return <LoadingSpinner />;
   }
 
   if (loading) {
@@ -504,7 +509,7 @@ const ProductDetail = () => {
   const SliderComponent = product.sliderComponent;
   
   // Obtener traducciones específicas para este producto
-  const productTexts = translations.products[id] || productsData[id];
+  const productTexts = translations.products[productId] || productsData[productId];
 
   return (
     <>
@@ -793,6 +798,15 @@ const ErrorContainer = styled.div`
   min-height: 80vh;
   font-size: 1.2rem;
   color: crimson;
+`;
+
+const LoadingSpinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export default ProductDetail; 
