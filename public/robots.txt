@@ -1,5 +1,5 @@
 # Archivo robots.txt para www.tricycle.es
-# Última actualización: 07/04/2025
+# Última actualización: 10/04/2024
 
 # Reglas globales para todos los robots
 User-agent: *
@@ -8,6 +8,20 @@ Allow: /assets/
 Allow: /images/
 Allow: /css/
 Allow: /js/
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.svg
+
+# Permitir explícitamente scripts de Google
+Allow: /googleads.g.doubleclick.net/
+Allow: /www.googleadservices.com/
+Allow: /www.google-analytics.com/
+Allow: /www.googletagmanager.com/
+Allow: /pagead/
+Allow: /analytics/
 
 # Directorios y archivos que no deberían ser indexados
 Disallow: /admin/
@@ -16,7 +30,7 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
 
-# Parámetros de URL que no deben ser indexados (sorting, filtering, etc.)
+# Parámetros de URL que no deben ser indexados
 Disallow: /*?sort=
 Disallow: /*?filter=
 Disallow: /*?q=
@@ -26,8 +40,11 @@ Disallow: /*?search=
 # Instrucciones específicas para Googlebot
 User-agent: Googlebot
 Allow: /
+Allow: /googleads.g.doubleclick.net/
+Allow: /www.googleadservices.com/
+Allow: /www.google-analytics.com/
+Allow: /www.googletagmanager.com/
 Disallow: /admin/
-Crawl-delay: 1
 
 # Instrucciones para bots de redes sociales
 User-agent: Twitterbot
