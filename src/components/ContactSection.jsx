@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 import ContactForm from './ContactForm';
-import qrCode from '../assets/images/qr.png';
+const qrCode = '/assets/qr.png';
 import { useTranslation } from 'react-i18next';
 
 const contactInfo = [

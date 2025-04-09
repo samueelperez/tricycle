@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import qrCode from '../assets/images/qr.png'; // Ruta corregida
+const qrCode = '/assets/qr.png';
 
 const ContactContainer = styled.div`
   // ... existing code ...

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useTranslation } from 'react-i18next';
 // Usaremos la imagen de los cubos de reciclaje que proporcionaste
-import heroImage from '../assets/images/recycling-bins.jpg'; 
+const heroImage = '/assets/recycling-bins.jpg';
 // Importamos las imágenes para el slider
-import heroImage1 from '../assets/images/recycling-bins.jpg'; 
+const heroImage1 = '/assets/recycling-bins.jpg';
 // Añade más imágenes según sea necesario
 // import heroImage2 from '../assets/images/otra-imagen.jpg';
 // import heroImage3 from '../assets/images/tercera-imagen.jpg';
