@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -428,17 +428,32 @@ const productsData = {
   }
 };
 
+const Breadcrumbs = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+`;
+
+const BreadcrumbLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.primary};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const BreadcrumbSeparator = styled.span`
+  margin: 0 8px;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
 const ProductDetail = () => {
   const { id } = useParams();
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  // Obtener el ID del producto de la URL o del path
-  const productId = id || location.pathname.split('/').pop();
-
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   
   // Seleccionar el idioma actual
@@ -451,27 +466,19 @@ const ProductDetail = () => {
   }, [i18n.language]);
 
   useEffect(() => {
-    const validProducts = ['plastico', 'metal', 'papel'];
-    if (!validProducts.includes(productId)) {
-      navigate('/');
-      return;
-    }
-  }, [productId, navigate]);
-
-  useEffect(() => {
     // Simulamos una carga de datos
     setLoading(true);
     
     setTimeout(() => {
-      if (productsData[productId]) {
-        setProduct(productsData[productId]);
+      if (productsData[id]) {
+        setProduct(productsData[id]);
         setLoading(false);
       } else {
         setError('Producto no encontrado');
         setLoading(false);
       }
     }, 500);
-  }, [productId]);
+  }, [id]);
 
   // Función para manejar el clic en el botón de contacto
   const handleContactClick = (e) => {
@@ -492,11 +499,6 @@ const ProductDetail = () => {
     }, 100);
   };
 
-  // Si no hay ID válido, mostrar loading
-  if (!productId) {
-    return <LoadingSpinner />;
-  }
-
   if (loading) {
     return <LoadingContainer>{translations.loadingText}</LoadingContainer>;
   }
@@ -509,12 +511,19 @@ const ProductDetail = () => {
   const SliderComponent = product.sliderComponent;
   
   // Obtener traducciones específicas para este producto
-  const productTexts = translations.products[productId] || productsData[productId];
+  const productTexts = translations.products[id] || productsData[id];
 
   return (
     <>
       <Navbar />
       <PageContainer>
+        <Breadcrumbs>
+          <BreadcrumbLink to="/">Inicio</BreadcrumbLink>
+          <BreadcrumbSeparator>/</BreadcrumbSeparator>
+          <BreadcrumbLink to="/productos">Productos</BreadcrumbLink>
+          <BreadcrumbSeparator>/</BreadcrumbSeparator>
+          <span>{productTexts.title}</span>
+        </Breadcrumbs>
         <BackButton to="/">{translations.backToHome}</BackButton>
         
         <HeaderSection>
@@ -798,15 +807,6 @@ const ErrorContainer = styled.div`
   min-height: 80vh;
   font-size: 1.2rem;
   color: crimson;
-`;
-
-const LoadingSpinner = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  font-size: 1.2rem;
-  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export default ProductDetail; 
