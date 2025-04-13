@@ -10,7 +10,7 @@ export const EMAILJS_CONFIG = {
   TEMPLATE_ID: 'template_26391bx',
   
   // Clave pública de EmailJS
-  PUBLIC_KEY: 'public_6KRN44MDKcSxK7rOL'
+  PUBLIC_KEY: '6KRN44MDKcSxK7rOL'
 };
 
 // Instrucciones para configurar EmailJS:
