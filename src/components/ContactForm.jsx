@@ -62,10 +62,15 @@ const ContactForm = ({ translations }) => {
           message: ''
         });
       } else {
+        console.error('Error en respuesta:', result);
         setSubmitStatus('error');
       }
     } catch (error) {
       console.error('Error al enviar el mensaje:', error);
+      // Mostrar mensaje de error más detallado
+      if (error.status === 412) {
+        console.error('Error 412: Precondition Failed - Verifica la configuración de EmailJS');
+      }
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
